@@ -1,0 +1,21 @@
+.origin {
+  stroke: steelblue;
+  stroke-width: 4px;
+}
+
+.dest {
+  stroke: crimson;
+  stroke-width: 4px;
+}
+
+#travel-graph text {
+  fill: #888;
+  font: 10px sans-serif;
+  text-anchor: start;
+}
+
+#travel-graph text.stationCode {
+  fill: #444;
+  font: 18px sans-serif;
+  text-anchor: end;
+}
