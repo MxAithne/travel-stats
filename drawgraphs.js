@@ -5,7 +5,6 @@ function drawAll()
   drawHeatCal();
 }
 
-
 function drawBarChart()
 {
   console.log("Drawing bar chart");
@@ -59,15 +58,15 @@ function drawBarChart()
 
   	console.log(stations);
 
-    var bwidth = 500;
-  	var barHeight = 10;
+    var barWidth = 800;
+  	var barHeight = 25;
   	var xoffset = 100;
 
   	var x = d3.scale.linear()
-  		.range([0, bwidth - (xoffset + 10) ]);
+  		.range([0, barWidth - (xoffset + 10) ]);
 
   	var chart = d3.select("#travel-graph")
-  		.attr("width", bwidth);
+  		.attr("width", barWidth);
 
   		// Set the scale for the x-axis so it goes from 0 to the biggest value
   	x.domain([0, d3.max(stations, function(station) { 
@@ -75,49 +74,63 @@ function drawBarChart()
   	})]); 
 
   	// Set the height of the whole graph
-  	chart.attr("height", barHeight * 2.5 * stations.length);
+  	chart.attr("height", barHeight * stations.length);
 
   	// Make a "g" SVG element for each station (this means "group" of items in SVG)
   	var bar = chart.selectAll("g")
   		.data(stations)
   		.enter().append("g")
-  		.attr("transform", function(station, i) { return "translate(0," + (i * barHeight * 2.5) + ")"; });
+  		.attr("transform", function(station, i) { return "translate(0," + (i * barHeight) + ")"; });
 
   	// Make "lines" SVG elements for arrivals and departures
   	bar.append("line")
   		.attr("x1", xoffset)
-  		.attr("y1", barHeight * 0.5)
+  		.attr("y1", barHeight * (1/3))
   		.attr("x2", function(station) { 
   			return xoffset + x(station.origin);
   		})
-  		.attr("y2", barHeight * 0.5)
+  		.attr("y2", barHeight * (1/3))
   		.attr("class", "origin");
   	bar.append("line")
   		.attr("x1", xoffset)
-  		.attr("y1", barHeight * 1.5)
+  		.attr("y1", barHeight * (2/3))
   		.attr("x2", function(station) { 
   			return xoffset + x(station.dest);
   		})
-  		.attr("y2", barHeight * 1.5)
+  		.attr("y2", barHeight * (2/3))
   		.attr("class", "dest");
 
   	// Put some text next to the lines
   	bar.append("text")
   		.attr("x", xoffset - 10)
-  		.attr("y", barHeight * 1)
+  		.attr("y", barHeight * 0.5)
   		.attr("dy", ".35em")
   		.attr("class", "stationCode")
   		.text(function(station) { return station.code; });
 
+    bar.append("line")
+      .attr("x1", xoffset)
+      .attr("x2", xoffset)
+      .attr("y1", 0)
+      .attr("y2", barHeight)
+      .attr("class", "rule");
+
+    bar.append("line")
+      .attr("x1", xoffset - 5)
+      .attr("x2", xoffset)
+      .attr("y1", barHeight * 0.5)
+      .attr("y2", barHeight * 0.5)
+      .attr("class", "rule");
+
   	bar.append("text")
   		.attr("x", function(station) { return xoffset + x(station.origin) + 5; })
-  		.attr("y", barHeight * 0.5)
+  		.attr("y", barHeight * (1/3))
   		.attr("dy", ".35em")
   		.text(function(station) { return station.origin; });
 
   	bar.append("text")
   		.attr("x", function(station) { return xoffset + x(station.dest) + 5; })
-  		.attr("y", barHeight * 1.5)
+  		.attr("y", barHeight * (2/3))
   		.attr("dy", ".35em")
   		.text(function(station) { return station.dest; });
   });
@@ -133,9 +146,9 @@ var day = function(d) { return (d.getDay() + 6) % 7; }, // monday = 0
     percent = d3.format("+.1%");
 
 var margin = {top: 5.5, right: 0, bottom: 5.5, left: 19.5},
-    width = 960 - margin.left - margin.right,
-    height = 130 - margin.top - margin.bottom,
-    size = height / 7;
+    hgWidth = 960 - margin.left - margin.right,
+    hgHeight = 130 - margin.top - margin.bottom,
+    size = hgHeight / 7;
 
 var color = d3_scale.scaleMagma()
     .domain([0, 5])
@@ -146,9 +159,9 @@ function drawHeatCal()
   var svg = d3.select("#calheat").selectAll("svg")
       .data(d3.range(2016, 2017))
     .enter().append("svg")
-      .attr("class", "RdYlGn")
-      .attr("width", width + margin.left + margin.right)
-      .attr("height", height + margin.top + margin.bottom)
+      //.attr("class", "RdYlGn")
+      .attr("width", hgWidth + margin.left + margin.right)
+      .attr("height", hgHeight + margin.top + margin.bottom)
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -182,6 +195,8 @@ function drawHeatCal()
       .rollup(function(d) { return d.length; })
       .map(csv);
 
+    console.log(data);
+
     rect.filter(function(d) { return d in data; })
       .attr("style", function(d) { return "fill:" + color(data[d]); })
       //.attr("class", function(d) { return "day q" + color(data[d]) + "-9"; })
@@ -200,3 +215,6 @@ function monthPath(t0) {
       + "H" + (w1 + 1) * size + "V" + 0
       + "H" + (w0 + 1) * size + "Z";
 }
+
+/* Normalised stacked bar */
+
