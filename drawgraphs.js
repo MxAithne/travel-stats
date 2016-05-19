@@ -1,3 +1,32 @@
+// Global datastores
+
+var totalJourneys = 0; // A count of all the journeys that I've made
+var totalvisitedStationCodes = 0; // A count of the total number of unique stations that I've been to
+var totalCalsses = 0; // A count of the total number of unique classes of train that I've traveled on
+var totalDaysTraveled = 0; // A count of days that have a journey on them
+
+var journeysAllStations = [];
+var journeysOriStations = [];
+var journeysDstStations = [];
+
+var journeysPerDay = [];
+var journeysByClass = []; 
+
+var stationGrid = [];
+
+// These must be of type list [] for the system to work
+var visitedStationCodes = []; // A unique list of the codes of the stations that I've been to
+var classNumbers = []; // A unique list of all the classes of train that I've traveled on
+
+function start()
+{
+  d3.csv("./travel-data.csv", function(csv)
+  {
+    genDataFromCSV(csv);
+    drawAll();
+  });
+}
+
 function drawAll()
 {
   console.log("Starting");
@@ -6,51 +35,106 @@ function drawAll()
   drawClassBars();
 }
 
+function genDataFromCSV(csv)
+{
+  totalJourneys = csv.length; // Count the total number of journeys that have been made
+
+  for (var i in csv)
+  {
+    if (visitedStationCodes.indexOf(csv[i].Origin) == -1) { visitedStationCodes.push(csv[i].Origin); }
+    if (visitedStationCodes.indexOf(csv[i].Destination) == -1) { visitedStationCodes.push(csv[i].Destination); }
+  }
+
+  totalvisitedStationCodes = visitedStationCodes.length;
+
+  journeysPerDay = d3.nest()
+    .key(function(d) { return d.Date; })
+    .rollup(function(d) { return d.length; })
+    .map(csv);
+
+  totalDaysTraveled = Object.keys(journeysPerDay).length;
+
+  console.log("Total journeys: " + totalJourneys);
+  console.log("List of station codes visited: " + visitedStationCodes);
+  console.log("Total unique stations vistied: " + totalvisitedStationCodes);
+  console.log("Total days spend traveling: " + totalDaysTraveled);
+  console.log("Journeys per day: ");
+  console.log(journeysPerDay);
+
+  
+  // Generate an NxN grid of zeros
+  var size = totalvisitedStationCodes;
+  for (var x = 0; x < totalvisitedStationCodes; x++)
+  {
+    stationGrid[x] = [];
+
+    for (var y = 0; y < totalvisitedStationCodes; y++)
+    {
+      stationGrid[x][y] = 0;
+    }
+  }
+
+  // For each journey, update the journeys table
+  for (var i in csv)
+  {
+    var x = visitedStationCodes.indexOf(csv[i].Origin);
+    var y = visitedStationCodes.indexOf(csv[i].Destination);
+    stationGrid[x][y]++;
+  }
+
+  // Group the journeys by class
+  journeysByClass = d3.nest()
+    .key(function(d) {return d.Class; })
+    .rollup(function(v) {return v.length; })
+    .entries(csv)
+    .map(function (d) { return { "class": d.key, "count": d.values }; });
+
+  classNumbers = journeysByClass.map(function (d) { return d.class });
+}
+
 function drawClassBars()
 {
   console.log("Drawing classes chart");
 
-  d3.csv("./travel-data.csv", function(data)
+  // Work out the start position and end position for each class
+  var currentPosition = 0;
+  var data = [];
+  for (var i in journeysByClass)
   {
-    var width = 800;
-    d3.select("#class-graph").attr("width", width);
+    data[i] = {
+      start: currentPosition,
+      end: currentPosition + journeysByClass[i].count,
+      label: journeysByClass[i].class
+    };
 
-    // Count up the total number of journeys (the number of rows in the CSV file)
-    var totalJourneys = data.length;
+    currentPosition = currentPosition + journeysByClass[i].count;
+  }
 
-    // Group the journeys by class
-    var byClass = d3.nest()
-      .key(function(d) {return d.Class; })
-      .rollup(function(v) {return v.length; })
-      .entries(data);
+  var width = 800;
+  d3.select("#class-graph").attr("width", width);
 
-    // Work out the start position and end position for each class
-    var currentPosition = 0;
-    for (var i in byClass)
-    {
-      byClass[i].start = currentPosition;
-      byClass[i].end = currentPosition + byClass[i].values;
-      currentPosition = currentPosition + byClass[i].values;
-    }
+  var x = d3.scale.linear()
+    .domain([0, totalJourneys])
+    .range([0, width]);
 
-    var x = d3.scale.linear()
-      .domain([0, totalJourneys])
-      .range([0, width]);
+  var colours = d3.scale.category20()
+    .domain(classNumbers);
 
-    var classNumbers = byClass.map(function (classGroup) { return classGroup.key; } );
+  var groups = d3.select("#class-graph").selectAll("g")
+    .data(data)
+    .enter().append("g");
 
-    var colours = d3.scale.category20()
-      .domain(classNumbers);
+  groups.append("rect")
+    .attr("x", function (group) { return x(group.start); })
+    .attr("y", 0)
+    .attr("width", function (group) { return x(group.end) - x(group.start); })
+    .attr("height", 50)
+    .attr("style", function (group) { return "fill:" + colours(group.label)});
 
-    var svg = d3.select("#class-graph").selectAll("rect")
-      .data(byClass)
-    .enter().append("rect")
-      .attr("x", function (classGroup) { return x(classGroup.start); })
-      .attr("y", 0)
-      .attr("width", function (classGroup) { return x(classGroup.end) - x(classGroup.start); })
-      .attr("height", 50)
-      .attr("style", function (classGroup) { return "fill:" + colours(classGroup.key)});
-  });
+  groups.append("text")
+    .attr("x", function (group) { return x(group.start); })
+    .attr("y", 10)
+    .text(function (group) { return group.label; } );
 }
 
 function drawBarChart()
@@ -237,20 +321,20 @@ function drawHeatCal()
       .attr("class", "month")
       .attr("d", monthPath);
 
-  d3.csv("travel-data.csv", function(csv) {
+  /*d3.csv("travel-data.csv", function(csv) {
     var data = d3.nest()
       .key(function(d) { return d.Date; })
       .rollup(function(d) { return d.length; })
       .map(csv);
 
-    console.log(data);
+    console.log(data);*/
 
-    rect.filter(function(d) { return d in data; })
-      .attr("style", function(d) { return "fill:" + color(data[d]); })
+    rect.filter(function(d) { return d in journeysPerDay; })
+      .attr("style", function(d) { return "fill:" + color(journeysPerDay[d]); })
       //.attr("class", function(d) { return "day q" + color(data[d]) + "-9"; })
       .select("title")
-      .text(function(d) { return d + ": " + data[d]; });
-  });
+      .text(function(d) { return d + ": " + journeysPerDay[d]; });
+  //});
 }
 
 function monthPath(t0) {
@@ -263,6 +347,3 @@ function monthPath(t0) {
       + "H" + (w1 + 1) * size + "V" + 0
       + "H" + (w0 + 1) * size + "Z";
 }
-
-/* Normalised stacked bar */
-
