@@ -61,7 +61,7 @@ text.stationCode {
 }
 
 #circle circle {
-  fill: none;
+  fill: lightgray;
   pointer-events: all;
 }
 

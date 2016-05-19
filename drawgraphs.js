@@ -36,11 +36,11 @@ function drawAll()
   console.log("Starting");
   drawBarChart();
   drawHeatCal();
-  drawStackedBars("Class", journeysByClass, "count", "class", "#class-graph");
-  drawStackedBars("Stations", stations, "tot", "code", "#station-graph");
-  drawStackedBars("Departures", stations, "ori", "code", "#station-dep");
-  drawStackedBars("Arrivals", stations, "dst", "code", "#station-ari");
-  ready(0, stations, stationGrid)
+  drawStackedBars("Class", journeysByClass, "count", "class", "", "#class-graph");
+  drawStackedBars("Stations", stations, "tot", "code", "name", "#station-graph");
+  drawStackedBars("Departures", stations, "ori", "code", "name", "#station-dep");
+  drawStackedBars("Arrivals", stations, "dst", "code", "name", "#station-ari");
+  drawChordDia(stations, stationGrid)
 }
 
 function genDataFromCSV(csv, lookupCsv)
@@ -95,6 +95,9 @@ function genDataFromCSV(csv, lookupCsv)
   for (var i in stationSummary)
   {
     stationSummary[i].tot = stationSummary[i].ori + stationSummary[i].dst;
+    stationSummary[i].totp = stationSummary[i].tot / totalJourneys;
+    stationSummary[i].orip = stationSummary[i].ori / totalJourneys;
+    stationSummary[i].dstp = stationSummary[i].dst / totalJourneys;
   }
 
   // Make a list of all the stations
@@ -132,7 +135,7 @@ function genDataFromCSV(csv, lookupCsv)
   {
     var x = visitedStationCodes.indexOf(csv[i].Origin);
     var y = visitedStationCodes.indexOf(csv[i].Destination);
-    stationGrid[x][y]++;
+    stationGrid[x][y] += (1 / totalJourneys) ;
   }
 
   // Group the journeys by class
@@ -145,12 +148,18 @@ function genDataFromCSV(csv, lookupCsv)
   classNumbers = journeysByClass.map(function (d) { return d.class });
 }
 
-function drawStackedBars(title,dataset,quantity,label,location)
+function drawStackedBars(title,dataset,quantity,label,description,location)
 {
+  
+  var maxWidth = 800;
+  var barHeight = 50;
+  var xoffset = 100;
+
   // Work out the start position and end position for each class
   var currentPosition = 0;
   var datatotal = 0;
   var data = [];
+
   for (var i in dataset)
   {
     data[i] = {
@@ -164,14 +173,13 @@ function drawStackedBars(title,dataset,quantity,label,location)
     datatotal = datatotal + dataset[i][quantity];
   }
 
-  var width = 800;
   d3.select(location)
-    .attr("width", width)
-    .attr("height", 50);
+    .attr("width", maxWidth)
+    .attr("height", barHeight);
 
   var x = d3.scale.linear()
     .domain([0, datatotal])
-    .range([0, width]);
+    .range([0, maxWidth]);
 
   var colours = d3.scale.category20()
     .domain(data.map(function (d) { return d.label; } ));
@@ -181,17 +189,18 @@ function drawStackedBars(title,dataset,quantity,label,location)
     .enter().append("g");
 
   groups.append("rect")
-    .attr("x", function (group) { return x(group.start); })
+    .attr("x", function (group) { return x(group.start); } )
     .attr("y", 0)
-    .attr("width", function (group) { return x(group.end) - x(group.start); })
-    .attr("height", 50)
-    .attr("style", function (group) { return "fill:" + colours(group.label)});
+    .attr("width", function (group) { return x(group.end) - x(group.start); } )
+    .attr("height", barHeight)
+    .attr("style", function (group) { return "fill:" + colours(group.label); } )
+    .append("title").text("Test");
 
   groups.append("text")
-    .attr("x", function (group) { return x(group.start) + 5; })
-    .attr("y", 25)
+    .attr("x", function (group) { return x(group.start) + 5; } )
+    .attr("y", barHeight * 0.5)
     .text(function (group) { return group.label; } )
-    .attr("glyph-orientation-vertical", "90")
+    .attr("glyph-orientation-vertical", "-90")
     .attr("writing-mode", "tb-rl");
 }
 
@@ -280,7 +289,7 @@ function drawBarChart()
   });
 }
 
-/* Calendar Heat Graph */
+// Calendar Heat Graph
 
 var cellSize = 17; // cell size
 
@@ -294,7 +303,7 @@ var margin = {top: 5.5, right: 0, bottom: 5.5, left: 19.5},
     hgHeight = 130 - margin.top - margin.bottom,
     size = hgHeight / 7;
 
-var color = d3_scale.scaleMagma()
+var colour = d3_scale.scaleMagma()
     .domain([0, 5])
 
 function drawHeatCal()
@@ -332,7 +341,7 @@ function drawHeatCal()
       .attr("d", monthPath);
 
     rect.filter(function(d) { return d in journeysPerDay; })
-      .attr("style", function(d) { return "fill:" + color(journeysPerDay[d]); })
+      .attr("style", function(d) { return "fill:" + colour(journeysPerDay[d]); })
       .select("title")
       .text(function(d) { return d + ": " + journeysPerDay[d]; });
 }
@@ -346,4 +355,104 @@ function monthPath(t0) {
       + "H" + w1 * size + "V" + (d1 + 1) * size
       + "H" + (w1 + 1) * size + "V" + 0
       + "H" + (w0 + 1) * size + "Z";
+}
+
+
+// Chord Diagram
+
+function drawChordDia(labelData, matrixData) {
+
+  var width = 720,
+      height = 720,
+      outerRadius = Math.min(width, height) / 2 - 10,
+      innerRadius = outerRadius - 24;
+
+  var formatPercent = d3.format("%");
+
+  var arc = d3.svg.arc()
+      .innerRadius(innerRadius)
+      .outerRadius(outerRadius);
+
+  var layout = d3.layout.chord()
+      .padding(.04)
+      .sortSubgroups(d3.descending)
+      .sortChords(d3.ascending);
+
+  var colours = d3_scale.scalePlasma()
+    .domain([0, visitedStationCodes.length - 1]);
+
+  var path = d3.svg.chord()
+      .radius(innerRadius);
+
+  var svg = d3.select("#chord-diagram").append("svg")
+      .attr("width", width)
+      .attr("height", height)
+      .attr("shape-rendering", "geometricPrecision")
+    .append("g")
+      .attr("id", "circle")
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+  svg.append("circle")
+      .attr("r", outerRadius);
+
+  // Compute the chord layout.
+  layout.matrix(matrixData);
+
+  // Add a group per neighborhood.
+  var group = svg.selectAll(".group")
+      .data(layout.groups)
+    .enter().append("g")
+      .attr("class", "group")
+      .on("mouseover", mouseover);
+
+  // Add a mouseover title.
+  group.append("title").text(function(d, i) {
+    return labelData[i].name + ": " + formatPercent(labelData[i].totp) + " of Departures";
+  });
+
+  // Add the group arc.
+  var groupPath = group.append("path")
+      .attr("id", function(d, i) { return "group" + i; })
+      .attr("d", arc)
+      .style("fill", function (d, i) { return colours(i); });
+
+  // Add a text label.
+  var groupText = group.append("text")
+      .attr("x", 6)
+      .attr("dy", 15);
+
+  groupText.append("textPath")
+      .attr("xlink:href", function(d, i) { return "#group" + i; })
+      .text(function(d, i) { return labelData[i].code; });
+
+  // Remove the labels that don't fit. :(
+  groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+      .remove();
+  
+  // Add the chords.
+  var chord = svg.selectAll(".chord")
+      .data(layout.chords)
+    .enter().append("path")
+      .attr("class", "chord")
+      .style("fill", function (d) { 
+        return colours(d.source.index); 
+      })
+      .attr("d", path);
+
+  // Add an elaborate mouseover title for each chord.
+  chord.append("title").text(function(d) {
+    return labelData[d.source.index].name
+        + " → " + labelData[d.target.index].name
+        + ": " + formatPercent(d.source.value)
+        + "\n" + labelData[d.target.index].name
+        + " → " + labelData[d.source.index].name
+        + ": " + formatPercent(d.target.value);
+  });
+
+  function mouseover(d, i) {
+    chord.classed("fade", function(p) {
+      return p.source.index != i
+          && p.target.index != i;
+    });
+  }
 }
