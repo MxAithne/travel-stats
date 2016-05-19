@@ -5,9 +5,7 @@ var totalvisitedStationCodes = 0; // A count of the total number of unique stati
 var totalCalsses = 0; // A count of the total number of unique classes of train that I've traveled on
 var totalDaysTraveled = 0; // A count of days that have a journey on them
 
-var journeysAllStations = [];
-var journeysOriStations = [];
-var journeysDstStations = [];
+var stationSummary = {};
 
 var journeysPerDay = [];
 var journeysByClass = []; 
@@ -17,13 +15,19 @@ var stationGrid = [];
 // These must be of type list [] for the system to work
 var visitedStationCodes = []; // A unique list of the codes of the stations that I've been to
 var classNumbers = []; // A unique list of all the classes of train that I've traveled on
+var stations = [];
+
+
 
 function start()
 {
   d3.csv("./travel-data.csv", function(csv)
   {
-    genDataFromCSV(csv);
-    drawAll();
+    d3.csv("./station-codes.csv", function (lookupCsv) 
+    {
+      genDataFromCSV(csv, lookupCsv);
+      drawAll();
+    });
   });
 }
 
@@ -32,10 +36,14 @@ function drawAll()
   console.log("Starting");
   drawBarChart();
   drawHeatCal();
-  drawClassBars();
+  drawStackedBars("Class", journeysByClass, "count", "class", "#class-graph");
+  drawStackedBars("Stations", stations, "tot", "code", "#station-graph");
+  drawStackedBars("Departures", stations, "ori", "code", "#station-dep");
+  drawStackedBars("Arrivals", stations, "dst", "code", "#station-ari");
+  ready(0, stations, stationGrid)
 }
 
-function genDataFromCSV(csv)
+function genDataFromCSV(csv, lookupCsv)
 {
   totalJourneys = csv.length; // Count the total number of journeys that have been made
 
@@ -53,6 +61,51 @@ function genDataFromCSV(csv)
     .map(csv);
 
   totalDaysTraveled = Object.keys(journeysPerDay).length;
+
+  // A dictionary of all the stations, index by their station codes
+  var stationDictionary = {};
+
+  // Make station objects for each code
+  for (var i in visitedStationCodes)
+  {
+    stationSummary[visitedStationCodes[i]] = ({"code": visitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
+  }
+
+  for (var i in lookupCsv)
+  {
+    if (stationSummary[lookupCsv[i].Code])
+    {
+      stationSummary[lookupCsv[i].Code]["name"] = lookupCsv[i].Name;
+    }
+  }
+
+  var origincnt = d3.nest()
+    .key(function(d) {return d.Origin; })
+    .rollup(function(v) {return v.length; })
+    .entries(csv)
+    .forEach(function(m) { stationSummary[m.key].ori = m.values; });
+  var destcnt = d3.nest()
+    .key(function(d) {return d.Destination; })
+    .rollup(function(v) {return v.length; })
+    .entries(csv)
+    .forEach(function(m) { stationSummary[m.key].dst = m.values; });
+
+  // Add origins to destinations for total journeys to/from station
+
+  for (var i in stationSummary)
+  {
+    stationSummary[i].tot = stationSummary[i].ori + stationSummary[i].dst;
+  }
+
+  // Make a list of all the stations
+
+  for (var i in stationSummary)
+  {
+    stations.push(stationSummary[i]);
+  }
+
+  stations.sort(function (a, b) { return b.tot - a.tot; });
+  visitedStationCodes.sort(function (a, b) { return stationSummary[b].tot - stationSummary[a].tot; });
 
   console.log("Total journeys: " + totalJourneys);
   console.log("List of station codes visited: " + visitedStationCodes);
@@ -92,35 +145,38 @@ function genDataFromCSV(csv)
   classNumbers = journeysByClass.map(function (d) { return d.class });
 }
 
-function drawClassBars()
+function drawStackedBars(title,dataset,quantity,label,location)
 {
-  console.log("Drawing classes chart");
-
   // Work out the start position and end position for each class
   var currentPosition = 0;
+  var datatotal = 0;
   var data = [];
-  for (var i in journeysByClass)
+  for (var i in dataset)
   {
     data[i] = {
       start: currentPosition,
-      end: currentPosition + journeysByClass[i].count,
-      label: journeysByClass[i].class
+      end: currentPosition + dataset[i][quantity],
+      label: dataset[i][label]
     };
 
-    currentPosition = currentPosition + journeysByClass[i].count;
+    currentPosition = currentPosition + dataset[i][quantity];
+
+    datatotal = datatotal + dataset[i][quantity];
   }
 
   var width = 800;
-  d3.select("#class-graph").attr("width", width);
+  d3.select(location)
+    .attr("width", width)
+    .attr("height", 50);
 
   var x = d3.scale.linear()
-    .domain([0, totalJourneys])
+    .domain([0, datatotal])
     .range([0, width]);
 
   var colours = d3.scale.category20()
-    .domain(classNumbers);
+    .domain(data.map(function (d) { return d.label; } ));
 
-  var groups = d3.select("#class-graph").selectAll("g")
+  var groups = d3.select(location).selectAll("g")
     .data(data)
     .enter().append("g");
 
@@ -132,9 +188,11 @@ function drawClassBars()
     .attr("style", function (group) { return "fill:" + colours(group.label)});
 
   groups.append("text")
-    .attr("x", function (group) { return x(group.start); })
-    .attr("y", 10)
-    .text(function (group) { return group.label; } );
+    .attr("x", function (group) { return x(group.start) + 5; })
+    .attr("y", 25)
+    .text(function (group) { return group.label; } )
+    .attr("glyph-orientation-vertical", "90")
+    .attr("writing-mode", "tb-rl");
 }
 
 function drawBarChart()
@@ -143,52 +201,6 @@ function drawBarChart()
 
   d3.csv("./travel-data.csv", function(data)
   {
-  	// A dictionary of all the stations, index by their station codes
-  	var stationDictionary = {};
-
-  	// Make a list of all the codes that represent either an origin or destination
-  	var usedcodes = [];
-  	for (var i in data)
-  	{
-  		if (usedcodes.indexOf(data[i].Origin) == -1) { usedcodes.push(data[i].Origin); }
-  		if (usedcodes.indexOf(data[i].Destination) == -1) { usedcodes.push(data[i].Destination); }
-  	}
-
-  	// Make station objects for each code
-  	for (var i in usedcodes)
-  	{
-  		stationDictionary[usedcodes[i]] = ({"code": usedcodes[i], "origin": 0, "dest": 0});
-  	}
-
-  	console.log(data[0]);
-
-  	var origincnt = d3.nest()
-  		.key(function(d) {return d.Origin; })
-  		.rollup(function(v) {return v.length; })
-  		.entries(data)
-  		.forEach(function(m) { stationDictionary[m.key].origin = m.values; });
-  	var destcnt = d3.nest()
-  		.key(function(d) {return d.Destination; })
-  		.rollup(function(v) {return v.length; })
-  		.entries(data)
-  		.forEach(function(m) { stationDictionary[m.key].dest = m.values; });
-
-  	// Make a list of all the stations
-  	var stations = [];
-  	for (var i in stationDictionary)
-  	{
-  		stations.push(stationDictionary[i]);
-  	}
-
-  	// Figure out the total times a station has been used as an origin or destination
-  	for (var i in stations) 
-  	{
-  		stations[i].totjourney = stations[i].origin + stations[i].dest;
-  	}
-
-  	stations.sort(function (a, b) { return b.totjourney - a.totjourney; });
-
-  	console.log(stations);
 
     var barWidth = 800;
   	var barHeight = 25;
@@ -202,7 +214,7 @@ function drawBarChart()
 
   		// Set the scale for the x-axis so it goes from 0 to the biggest value
   	x.domain([0, d3.max(stations, function(station) { 
-  		return Math.max(station.origin, station.dest); 
+  		return Math.max(station.ori, station.dst); 
   	})]); 
 
   	// Set the height of the whole graph
@@ -219,7 +231,7 @@ function drawBarChart()
   		.attr("x1", xoffset)
   		.attr("y1", barHeight * (1/3))
   		.attr("x2", function(station) { 
-  			return xoffset + x(station.origin);
+  			return xoffset + x(station.ori);
   		})
   		.attr("y2", barHeight * (1/3))
   		.attr("class", "origin");
@@ -227,7 +239,7 @@ function drawBarChart()
   		.attr("x1", xoffset)
   		.attr("y1", barHeight * (2/3))
   		.attr("x2", function(station) { 
-  			return xoffset + x(station.dest);
+  			return xoffset + x(station.dst);
   		})
   		.attr("y2", barHeight * (2/3))
   		.attr("class", "dest");
@@ -255,16 +267,16 @@ function drawBarChart()
       .attr("class", "rule");
 
   	bar.append("text")
-  		.attr("x", function(station) { return xoffset + x(station.origin) + 5; })
+  		.attr("x", function(station) { return xoffset + x(station.ori) + 5; })
   		.attr("y", barHeight * (1/3))
   		.attr("dy", ".35em")
-  		.text(function(station) { return station.origin; });
+  		.text(function(station) { return station.ori; });
 
   	bar.append("text")
-  		.attr("x", function(station) { return xoffset + x(station.dest) + 5; })
+  		.attr("x", function(station) { return xoffset + x(station.dst) + 5; })
   		.attr("y", barHeight * (2/3))
   		.attr("dy", ".35em")
-  		.text(function(station) { return station.dest; });
+  		.text(function(station) { return station.dst; });
   });
 }
 
@@ -287,11 +299,9 @@ var color = d3_scale.scaleMagma()
 
 function drawHeatCal()
 {
-  
   var svg = d3.select("#calheat").selectAll("svg")
       .data(d3.range(2016, 2017))
     .enter().append("svg")
-      //.attr("class", "RdYlGn")
       .attr("width", hgWidth + margin.left + margin.right)
       .attr("height", hgHeight + margin.top + margin.bottom)
     .append("g")
@@ -321,20 +331,10 @@ function drawHeatCal()
       .attr("class", "month")
       .attr("d", monthPath);
 
-  /*d3.csv("travel-data.csv", function(csv) {
-    var data = d3.nest()
-      .key(function(d) { return d.Date; })
-      .rollup(function(d) { return d.length; })
-      .map(csv);
-
-    console.log(data);*/
-
     rect.filter(function(d) { return d in journeysPerDay; })
       .attr("style", function(d) { return "fill:" + color(journeysPerDay[d]); })
-      //.attr("class", function(d) { return "day q" + color(data[d]) + "-9"; })
       .select("title")
       .text(function(d) { return d + ": " + journeysPerDay[d]; });
-  //});
 }
 
 function monthPath(t0) {
