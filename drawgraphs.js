@@ -3,6 +3,54 @@ function drawAll()
   console.log("Starting");
   drawBarChart();
   drawHeatCal();
+  drawClassBars();
+}
+
+function drawClassBars()
+{
+  console.log("Drawing classes chart");
+
+  d3.csv("./travel-data.csv", function(data)
+  {
+    var width = 800;
+    d3.select("#class-graph").attr("width", width);
+
+    // Count up the total number of journeys (the number of rows in the CSV file)
+    var totalJourneys = data.length;
+
+    // Group the journeys by class
+    var byClass = d3.nest()
+      .key(function(d) {return d.Class; })
+      .rollup(function(v) {return v.length; })
+      .entries(data);
+
+    // Work out the start position and end position for each class
+    var currentPosition = 0;
+    for (var i in byClass)
+    {
+      byClass[i].start = currentPosition;
+      byClass[i].end = currentPosition + byClass[i].values;
+      currentPosition = currentPosition + byClass[i].values;
+    }
+
+    var x = d3.scale.linear()
+      .domain([0, totalJourneys])
+      .range([0, width]);
+
+    var classNumbers = byClass.map(function (classGroup) { return classGroup.key; } );
+
+    var colours = d3.scale.category20()
+      .domain(classNumbers);
+
+    var svg = d3.select("#class-graph").selectAll("rect")
+      .data(byClass)
+    .enter().append("rect")
+      .attr("x", function (classGroup) { return x(classGroup.start); })
+      .attr("y", 0)
+      .attr("width", function (classGroup) { return x(classGroup.end) - x(classGroup.start); })
+      .attr("height", 50)
+      .attr("style", function (classGroup) { return "fill:" + colours(classGroup.key)});
+  });
 }
 
 function drawBarChart()
