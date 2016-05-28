@@ -13,28 +13,40 @@
     <script src="https://d3js.org/d3-time.v0.2.min.js"></script>
     <script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
     <script src="https://d3js.org/d3-scale.v0.7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
     <script src="./drawgraphs.js"></script>
   </head>
 
   <body onload="start()">
     <header><h1>MxAithne's Travel Stats</h1></header>
     <main>
+      <section id="locations-visited" class="invisible">
+      </section>
+
+      <section id="rail-travel" class="visible">
+        <h3>Rail Travel:</h3>
+        
+        <h4>General Stats:</h4>
+        <div id="gen-stats"></div>
+
+        <h4>Journeys per day:</h4>
+        <div id="calheat"></div>
+        
+        <h4>Connections:</h4>
+        <div id="chord-diagram"></div>
       
-      <p>Journeys per day:</p>
-      <div id="calheat"></div>
+        <h4>Stations:</h4>
+        <div id="station-graph"></div>
+        <div id="station-dep"></div>
+        <div id="station-ari"></div>
 
-      <div id="chord-diagram"></div>
-      
-      <p>Stations:</p>
-      <svg id="station-graph"></svg>
-      <svg id="station-dep"></svg>
-      <svg id="station-ari"></svg>
+        <div id="dep-arr" class="invisible">
+          <p><span class="origin">Departures</span> and <span class="dest">Arrivals</span>:</p>
+          <div id="travel-graph"></div>
+        </div>
 
-      <p><span class="origin">Departures</span> and <span class="dest">Arrivals</span>:</p>
-      <svg id="travel-graph"></svg>
-
-      <p>Journeys by train class:</p>
-      <svg id="class-graph"></svg>
+        <h4>Journeys by train class:</h4>
+        <div id="class-graph"></div>
 
     </main>
   </body>

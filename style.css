@@ -61,6 +61,8 @@ text.stationCode {
   stroke-width: 2px;
 }
 
+/* The chord chart */
+
 #circle circle {
   fill: lightgray;
   pointer-events: all;
