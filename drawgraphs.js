@@ -17,7 +17,7 @@ var visitedStationCodes = []; // A unique list of the codes of the stations that
 var classNumbers = []; // A unique list of all the classes of train that I've traveled on
 var stations = [];
 
-
+var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 
 function start()
 {
@@ -151,7 +151,7 @@ function genDataFromCSV(csv, lookupCsv)
 function drawStackedBars(title,dataset,quantity,label,description,location)
 {
   
-  var maxWidth = 800;
+  var maxWidth = 960;
   var barHeight = 50;
   var xoffset = 100;
 
@@ -165,7 +165,8 @@ function drawStackedBars(title,dataset,quantity,label,description,location)
     data[i] = {
       start: currentPosition,
       end: currentPosition + dataset[i][quantity],
-      label: dataset[i][label]
+      label: dataset[i][label],
+      description: dataset[i][description]
     };
 
     currentPosition = currentPosition + dataset[i][quantity];
@@ -179,27 +180,40 @@ function drawStackedBars(title,dataset,quantity,label,description,location)
 
   var x = d3.scale.linear()
     .domain([0, datatotal])
-    .range([0, maxWidth]);
+    .range([xoffset, maxWidth]);
 
   var colours = d3.scale.category20()
     .domain(data.map(function (d) { return d.label; } ));
 
-  var groups = d3.select(location).selectAll("g")
+  var barChart = d3.select(location);
+
+  var titleContainer = barChart.append("g")
+    .attr("width", xoffset)
+    .attr("height", barHeight);
+
+  titleContainer.append("text")
+    .attr("x", 0)
+    .attr("y", barHeight / 2)
+    .text(title);
+
+  var groupsContainer = barChart.append("g");
+
+  var groups = groupsContainer.selectAll("g")
     .data(data)
     .enter().append("g");
 
   groups.append("rect")
-    .attr("x", function (group) { return x(group.start); } )
+    .attr("x", function (d) { return x(d.start); } )
     .attr("y", 0)
-    .attr("width", function (group) { return x(group.end) - x(group.start); } )
+    .attr("width", function (d) { return x(d.end) - x(d.start); } )
     .attr("height", barHeight)
-    .attr("style", function (group) { return "fill:" + colours(group.label); } )
-    .append("title").text("Test");
+    .attr("style", function (d) { return "fill:" + colours(d.label); } )
+    .append("title").text(function (d) { return d.description; });
 
   groups.append("text")
-    .attr("x", function (group) { return x(group.start) + 5; } )
+    .attr("x", function (d) { return x(d.start) + 5; } )
     .attr("y", barHeight * 0.5)
-    .text(function (group) { return group.label; } )
+    .text(function (d) { return d.label; } )
     .attr("glyph-orientation-vertical", "-90")
     .attr("writing-mode", "tb-rl");
 }
@@ -298,13 +312,13 @@ var day = function(d) { return (d.getDay() + 6) % 7; }, // monday = 0
     date = d3.time.format("%Y-%m-%d"),
     percent = d3.format("+.1%");
 
-var margin = {top: 5.5, right: 0, bottom: 5.5, left: 19.5},
-    hgWidth = 960 - margin.left - margin.right,
+var margin = {top: 20, right: 0, bottom: 5.5, left: 19.5},
     hgHeight = 130 - margin.top - margin.bottom,
-    size = hgHeight / 7;
+    size = hgHeight / 7,
+    hgWidth = (53 * size) + margin.left + margin.right;
 
-var colour = d3_scale.scaleMagma()
-    .domain([0, 5])
+var colour = d3_scale.scaleCool()
+    .domain([0, 6])
 
 function drawHeatCal()
 {
@@ -313,6 +327,7 @@ function drawHeatCal()
     .enter().append("svg")
       .attr("width", hgWidth + margin.left + margin.right)
       .attr("height", hgHeight + margin.top + margin.bottom)
+
     .append("g")
       .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -333,6 +348,24 @@ function drawHeatCal()
 
   rect.append("title")
       .text(function(d) { return d; });
+
+  svg.selectAll(".monthLabel")
+    .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
+    .enter().append("text")
+      .attr("class", "monthLabel")
+      .attr("x", function (d) { 
+
+        // Get week number of first day in month
+        var first = week(d);
+
+        // Get week number of last day in month
+        var last = week(new Date(d.getFullYear(), d.getMonth() + 1, 0));
+
+        // Get an x position half way between these two
+        return ((last - first) * size)/2 + (first * size);
+       })
+      .attr("y", -10)
+      .text(function (d) { return months[d.getMonth()]; });
 
   svg.selectAll(".month")
       .data(function(d) { return d3.time.months(new Date(d, 0, 1), new Date(d + 1, 0, 1)); })
@@ -378,7 +411,7 @@ function drawChordDia(labelData, matrixData) {
       .sortSubgroups(d3.descending)
       .sortChords(d3.ascending);
 
-  var colours = d3_scale.scalePlasma()
+  var colours = d3_scale.scaleRainbow()
     .domain([0, visitedStationCodes.length - 1]);
 
   var path = d3.svg.chord()

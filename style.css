@@ -17,6 +17,7 @@ svg
 {
   margin-left: auto;
   margin-right: auto;
+  display: block;
 }
 
 .origin {
@@ -50,7 +51,7 @@ text.stationCode {
 .day /* The day boxes on the heat calendar */
 {
   fill: none;
-  stroke: lightblue
+  stroke: darkblue;
 }
 
 .month /* The lines that boarder the months on the heat calendar */
