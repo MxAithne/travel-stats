@@ -1,27 +1,34 @@
 // Global datastores
 
 var totalJourneys = 0; // A count of all the journeys that I've made
-var totalVisitedStationCodes = 0; // A count of the total number of unique stations that I've been to
-var totalCalsses = 0; // A count of the total number of unique classes of train that I've traveled on
 var totalDaysTraveled = 0; // A count of days that have a journey on them
-var totalNatRailStations = 0; // The total number of nation rail stations counted from the station-codes.csv file
+
+var totalNatRailStations = 0; // The total number of national rail stations
+var totalAccessRailStations = 0; // The total number of national rail stations that are fully wheelchair accessible
+var totalVisitedStations = 0; // A count of the total number of unique stations that I've been to
+var totalVisitedAccessStations = 0; // The total number of unique stations that I've been to that are fully wheelchair accessible
+
+var totalClasses = 0; // A count of the total number of unique classes of train that I've traveled on
 
 var percentDaysTraveled = 0;
-var percentStationsVisited = 0;
+var percentAccessRailStations = 0;
+var percentVisitedStations = 0;
+var percentVisitedAccessStations = 0;
 
-var maxJourneyPerDay = 0;
+var maxJourneysInDay = 0; // The most rail journey that I have done in one day
+var maxJourneysDate = 0; // The date of the most recient day that I did the most rail journeys in
 
 var stationSummary = {};
 
 var journeysPerDay = [];
 var journeysByClass = []; 
 
-var stationGrid = [];
+var gridJourneys = [];
 
 // These must be of type list [] for the system to work
-var visitedStationCodes = []; // A unique list of the codes of the stations that I've been to
-var classNumbers = []; // A unique list of all the classes of train that I've traveled on
-var stations = [];
+var listVisitedStationCodes = []; // A unique list of the codes of the stations that I've been to
+var listClassNumbers = []; // A unique list of all the classes of train that I've traveled on
+var objListStations = [];
 
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var percent = d3.format(".1%"); // Sets the format for percentages
@@ -42,17 +49,22 @@ function genDataFromCSV(csv, lookupCsv)
 // Gets data from the travel-data.csv file and loads in into local varibles for processing and drawing graphs from.
 {
   totalJourneys = csv.length; // Count the total number of journeys that have been made
-  totalNatRailStations = lookupCsv.length;
+
+  var nestedByCrsCode = d3.nest()
+    .key(function(d) { return d.CrsCode; })
+    .rollup(function(d) { return d.length; })
+    .map(lookupCsv);
+  totalNatRailStations = Object.keys(nestedByCrsCode).length;
 
   for (var i in csv)
   {
-    if (visitedStationCodes.indexOf(csv[i].Origin) == -1) { visitedStationCodes.push(csv[i].Origin); }
-    if (visitedStationCodes.indexOf(csv[i].Destination) == -1) { visitedStationCodes.push(csv[i].Destination); }
+    if (listVisitedStationCodes.indexOf(csv[i].Origin) == -1) { listVisitedStationCodes.push(csv[i].Origin); }
+    if (listVisitedStationCodes.indexOf(csv[i].Destination) == -1) { listVisitedStationCodes.push(csv[i].Destination); }
   }
 
-  totalVisitedStationCodes = visitedStationCodes.length;
+  totalVisitedStations = listVisitedStationCodes.length;
 
-  percentStationsVisited = percent(totalVisitedStationCodes / totalNatRailStations);
+  percentVisitedStations = percent(totalVisitedStations / totalNatRailStations);
 
   journeysPerDay = d3.nest()
     .key(function(d) { return d.Date; })
@@ -66,24 +78,37 @@ function genDataFromCSV(csv, lookupCsv)
   percentDaysTraveled = percent(totalDaysTraveled / 365);
 
   // Find the most stations visited in one day
-  maxJourneyPerDay = d3.max(d3.values(journeysPerDay));
+  maxJourneysInDay = d3.max(d3.values(journeysPerDay));
 
   // A dictionary of all the stations, index by their station codes
   var stationDictionary = {};
 
   // Make station objects for each code
-  for (var i in visitedStationCodes)
+  for (var i in listVisitedStationCodes)
   {
-    stationSummary[visitedStationCodes[i]] = ({"code": visitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
+    stationSummary[listVisitedStationCodes[i]] = ({"code": listVisitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
   }
+
+  totalAccessRailStations = lookupCsv.filter(function (d) { return d.WheelchairAccess == "TRUE";}).length;
 
   for (var i in lookupCsv)
   {
-    if (stationSummary[lookupCsv[i].Code])
+    if (stationSummary[lookupCsv[i].CrsCode])
     {
-      stationSummary[lookupCsv[i].Code]["name"] = lookupCsv[i].Name;
+      stationSummary[lookupCsv[i].CrsCode]["name"] = lookupCsv[i].StationName;
+
+      // As some stations have multiple rows in the lookup csv, and not all have accurate accessibility information record a station as accessible if *any* row says the station is accessible
+      stationSummary[lookupCsv[i].CrsCode]["accessible"] = stationSummary[lookupCsv[i].CrsCode]["accessible"] || (lookupCsv[i].WheelchairAccess == "TRUE");
+
+      if (lookupCsv[i].WheelchairAccess == "TRUE")
+      {
+        totalVisitedAccessStations++;
+      }
     }
   }
+
+  percentAccessRailStations = percent(totalAccessRailStations / totalNatRailStations);
+  percentVisitedAccessStations = percent(totalVisitedAccessStations / totalAccessRailStations);
 
   var origincnt = d3.nest()
     .key(function(d) {return d.Origin; })
@@ -111,30 +136,30 @@ function genDataFromCSV(csv, lookupCsv)
 
   for (var i in stationSummary)
   {
-    stations.push(stationSummary[i]);
+    objListStations.push(stationSummary[i]);
   }
 
-  stations.sort(function (a, b) { return b.tot - a.tot; });
-  visitedStationCodes.sort(function (a, b) { return stationSummary[b].tot - stationSummary[a].tot; });
+  objListStations.sort(function (a, b) { return b.tot - a.tot; });
+  listVisitedStationCodes.sort(function (a, b) { return stationSummary[b].tot - stationSummary[a].tot; });
 
   // Generate an NxN grid of zeros
-  var size = totalVisitedStationCodes;
-  for (var x = 0; x < totalVisitedStationCodes; x++)
+  var size = totalVisitedStations;
+  for (var x = 0; x < totalVisitedStations; x++)
   {
-    stationGrid[x] = [];
+    gridJourneys[x] = [];
 
-    for (var y = 0; y < totalVisitedStationCodes; y++)
+    for (var y = 0; y < totalVisitedStations; y++)
     {
-      stationGrid[x][y] = 0;
+      gridJourneys[x][y] = 0;
     }
   }
 
   // For each journey, update the journeys table
   for (var i in csv)
   {
-    var x = visitedStationCodes.indexOf(csv[i].Origin);
-    var y = visitedStationCodes.indexOf(csv[i].Destination);
-    stationGrid[x][y] += (1 / totalJourneys) ;
+    var x = listVisitedStationCodes.indexOf(csv[i].Origin);
+    var y = listVisitedStationCodes.indexOf(csv[i].Destination);
+    gridJourneys[x][y] += (1 / totalJourneys) ;
   }
 
   // Group the journeys by class
@@ -144,7 +169,7 @@ function genDataFromCSV(csv, lookupCsv)
     .entries(csv)
     .map(function (d) { return { "class": d.key, "count": d.values }; });
 
-  classNumbers = journeysByClass.map(function (d) { return d.class });
+  listClassNumbers = journeysByClass.map(function (d) { return d.class });
 }
 
 function drawAll()
@@ -154,20 +179,22 @@ function drawAll()
   drawBarChart();
   drawHeatCal();
   drawStackedBars("Class", journeysByClass, "count", "class", "", "#class-graph");
-  drawStackedBars("Stations", stations, "tot", "code", "name", "#station-graph");
-  drawStackedBars("Departures", stations, "ori", "code", "name", "#station-dep");
-  drawStackedBars("Arrivals", stations, "dst", "code", "name", "#station-ari");
-  drawChordDia(stations, stationGrid)
+  drawStackedBars("Stations", objListStations, "tot", "code", "name", "#station-graph");
+  drawStackedBars("Departures", objListStations, "ori", "code", "name", "#station-dep");
+  drawStackedBars("Arrivals", objListStations, "dst", "code", "name", "#station-ari");
+  drawChordDia(objListStations, gridJourneys)
 }
 
 function drawStats()
 {
   $('#gen-stats').append("<p>Total journeys: " + totalJourneys + "</p>");
-  $('#gen-stats').append("<p>Total unique stations vistied: " + totalVisitedStationCodes + " / " + totalNatRailStations + " (" + percentStationsVisited + ")</p>");
+  $('#gen-stats').append("<p>Total stations visited: " + totalVisitedStations + " / " + totalNatRailStations + " (" + percentVisitedStations + ")</p>");
+  $('#gen-stats').append("<p>Total fully wheelchair accessible stations visited: " + totalVisitedAccessStations + " / " + totalAccessRailStations + " (" + percentVisitedAccessStations + ")</p>");
   $('#gen-stats').append("<p>Total days spent traveling: " + totalDaysTraveled + " / 365 (" + percentDaysTraveled + ")</p>");
-  $('#gen-stats').append("<p>Most rail journeys in one day: " + maxJourneyPerDay + "</p>");
-
-  console.log("List of station codes visited: " + visitedStationCodes);
+  $('#gen-stats').append("<p>Most rail journeys in one day: " + maxJourneysInDay + "</p>");
+  $('#gen-stats').append("<p>Total fully wheelchair accessible National Rail stations: " + totalAccessRailStations + " / " + totalNatRailStations + " (" + percentAccessRailStations + ")</p>");
+  
+  console.log("List of station codes visited: " + listVisitedStationCodes);
   console.log("Journeys per day: ");
   console.log(journeysPerDay);
 }
@@ -255,34 +282,28 @@ function drawBarChart()
 		.attr("width", barWidth);
 
 	// Set the scale for the x-axis so it goes from 0 to the biggest value
-	x.domain([0, d3.max(stations, function(station) { 
-		return Math.max(station.ori, station.dst); 
-	})]); 
+	x.domain([0, d3.max(objListStations, function(d) { return Math.max(d.ori, d.dst); })]); 
 
 	// Set the height of the whole graph
-	chart.attr("height", barHeight * stations.length);
+	chart.attr("height", barHeight * objListStations.length);
 
 	// Make a "g" SVG element for each station (this means "group" of items in SVG)
 	var bar = chart.selectAll("g")
-		.data(stations)
+		.data(objListStations)
 		.enter().append("g")
-		.attr("transform", function(station, i) { return "translate(0," + (i * barHeight) + ")"; });
+		.attr("transform", function(d, i) { return "translate(0," + (i * barHeight) + ")"; });
 
 	// Make "lines" SVG elements for arrivals and departures
 	bar.append("line")
 		.attr("x1", xoffset)
 		.attr("y1", barHeight * (1/3))
-		.attr("x2", function(station) { 
-			return xoffset + x(station.ori);
-		})
+		.attr("x2", function(d) { return xoffset + x(d.ori); })
 		.attr("y2", barHeight * (1/3))
 		.attr("class", "origin");
 	bar.append("line")
 		.attr("x1", xoffset)
 		.attr("y1", barHeight * (2/3))
-		.attr("x2", function(station) { 
-			return xoffset + x(station.dst);
-		})
+		.attr("x2", function(d) { return xoffset + x(d.dst); })
 		.attr("y2", barHeight * (2/3))
 		.attr("class", "dest");
 
@@ -292,7 +313,7 @@ function drawBarChart()
 		.attr("y", barHeight * 0.5)
 		.attr("dy", ".35em")
 		.attr("class", "stationCode")
-		.text(function(station) { return station.code; });
+		.text(function(d) { return d.code; });
 
   bar.append("line")
     .attr("x1", xoffset)
@@ -309,16 +330,16 @@ function drawBarChart()
     .attr("class", "rule");
 
 	bar.append("text")
-		.attr("x", function(station) { return xoffset + x(station.ori) + 5; })
+		.attr("x", function(d) { return xoffset + x(d.ori) + 5; })
 		.attr("y", barHeight * (1/3))
 		.attr("dy", ".35em")
-		.text(function(station) { return station.ori; });
+		.text(function(d) { return d.ori; });
 
 	bar.append("text")
-		.attr("x", function(station) { return xoffset + x(station.dst) + 5; })
+		.attr("x", function(d) { return xoffset + x(d.dst) + 5; })
 		.attr("y", barHeight * (2/3))
 		.attr("dy", ".35em")
-		.text(function(station) { return station.dst; });
+		.text(function(d) { return d.dst; });
 }
 
 // Calendar Heat Graph
@@ -429,7 +450,7 @@ function drawChordDia(labelData, matrixData) {
       .sortChords(d3.ascending);
 
   var colours = d3_scale.scaleRainbow()
-    .domain([0, visitedStationCodes.length - 1]);
+    .domain([0, listVisitedStationCodes.length - 1]);
 
   var path = d3.svg.chord()
       .radius(innerRadius);
