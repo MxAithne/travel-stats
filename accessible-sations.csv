@@ -1,0 +1,1211 @@
+AtcoCode,StopCommonName,WheelchairAccess,AssistanceService
+9100ABDARE,Aberdare Rail Station,TRUE,TRUE
+9100ABDVY,Aberdovey Rail Station,TRUE,TRUE
+9100ABGLELE,Abergele & Pensarn Rail Station,TRUE,TRUE
+9100ABRCYNS,Abercynon Rail Station,TRUE,TRUE
+9100ABRDEEN,Aberdeen Rail Station,TRUE,TRUE
+9100ABRE,Abererch Rail Station,TRUE,TRUE
+9100ABRYSTH,Aberystwyth Rail Station,TRUE,TRUE
+9100ABWD,Abbey Wood Rail Station,TRUE,TRUE
+9100ACKLNGT,Acklington Rail Station,TRUE,TRUE
+9100ACRNGTN,Accrington Rail Station,TRUE,TRUE
+9100ADLC,Adlington (Cheshire) Rail Station,TRUE,TRUE
+9100ADLESTN,Addlestone Rail Station,TRUE,TRUE
+9100ADNL,Adlington (Lancs) Rail Station,TRUE,TRUE
+9100ADWICK,Adwick Rail Station,TRUE,TRUE
+9100AINSDAL,Ainsdale Rail Station,TRUE,TRUE
+9100AINTREE,Aintree Rail Station,TRUE,TRUE
+9100AIRDRIE,Airdrie Rail Station,TRUE,TRUE
+9100ALDEDGE,Alderley Edge Rail Station,TRUE,TRUE
+9100ALDRSHT,Aldershot Rail Station,TRUE,TRUE
+9100ALLENSW,Allens West Rail Station,TRUE,TRUE
+9100ALLOA,Alloa Rail Station,TRUE,TRUE
+9100ALNESS,Alness Rail Station,TRUE,TRUE
+9100ALSAGER,Alsager Rail Station,TRUE,TRUE
+9100ALTON,Alton Rail Station,TRUE,TRUE
+9100ALTRNHM,Altrincham Rail Station,TRUE,TRUE
+9100ALVCHRC,Alvechurch Rail Station,TRUE,TRUE
+9100ALXANDR,Alexandria Rail Station,TRUE,TRUE
+9100AMBERGT,Ambergate Rail Station,TRUE,TRUE
+9100AMMANFD,Ammanford Rail Station,TRUE,TRUE
+9100ANDOVER,Andover Rail Station,TRUE,TRUE
+9100ANERLEY,Anerley Rail Station,TRUE,TRUE
+9100ANGMRNG,Angmering Rail Station,TRUE,TRUE
+9100ANNAN,Annan Rail Station,TRUE,TRUE
+9100ANSDELL,Ansdell & Fairhaven Rail Station,TRUE,TRUE
+9100APBY,Appleby Rail Station,TRUE,TRUE
+9100APLYBDG,Appley Bridge Rail Station,TRUE,TRUE
+9100ARBROTH,Arbroath Rail Station,TRUE,TRUE
+9100ARDRSHB,Ardrossan Harbour Rail Station,TRUE,TRUE
+9100ARDRSSB,Ardrossan South Beach Rail Station,TRUE,TRUE
+9100ARDRSTN,Ardrossan Town Rail Station,TRUE,TRUE
+9100ARMDALE,Armadale (W Lothian) Rail Station,TRUE,TRUE
+9100ARRAM,Arram Rail Station,TRUE,TRUE
+9100ARUNDEL,Arundel Rail Station,TRUE,TRUE
+9100ASCOT,Ascot Rail Station,TRUE,TRUE
+9100ASHCHRC,Ashchurch For Tewkesbury Rail Station,TRUE,TRUE
+9100ASHD,Ashtead Rail Station,TRUE,TRUE
+9100ASHFKY,Ashford International Rail Station,TRUE,TRUE
+9100ASHH,Ash Rail Station,TRUE,TRUE
+9100ASHLEY,Ashley Rail Station,TRUE,TRUE
+9100ASHONUL,Ashton-Under-Lyne Rail Station,TRUE,TRUE
+9100ASKAM,Askam Rail Station,TRUE,TRUE
+9100ASLCKTN,Aslockton Rail Station,TRUE,TRUE
+9100ASPLEYG,Aspley Guise Rail Station,TRUE,TRUE
+9100ASPTRIA,Aspatria Rail Station,TRUE,TRUE
+9100ASTON,Aston Rail Station,TRUE,TRUE
+9100ATHRSTN,Atherstone Rail Station,TRUE,TRUE
+9100ATNBRO,Attenborough Rail Station,TRUE,TRUE
+9100ATTLBON,Attleborough Rail Station,TRUE,TRUE
+9100AUDLEYE,Audley End Rail Station,TRUE,TRUE
+9100AXMNSTR,Axminster Rail Station,TRUE,TRUE
+9100AYLSBRY,Aylesbury Rail Station,TRUE,TRUE
+9100AYLSPWY,Aylesbury Vale Parkway Rail Station,TRUE,TRUE
+9100BAGE,Burnage Rail Station,TRUE,TRUE
+9100BAILDON,Baildon Rail Station,TRUE,TRUE
+9100BALLOCH,Balloch Rail Station,TRUE,TRUE
+9100BAMFORD,Bamford Rail Station,TRUE,TRUE
+9100BANGOR,Bangor Rail Station,TRUE,TRUE
+9100BARELA,Bare Lane Rail Station,TRUE,TRUE
+9100BARGOED,Bargoed Rail Station,TRUE,TRUE
+9100BARKING,Barking Rail Station,TRUE,TRUE
+9100BAROW,Barrow-In-Furness Rail Station,TRUE,TRUE
+9100BARRYIS,Barry Island Rail Station,TRUE,TRUE
+9100BARWHVN,Barrow Haven Rail Station,TRUE,TRUE
+9100BASILDN,Basildon Rail Station,TRUE,TRUE
+9100BATHSPA,Bath Spa Rail Station,TRUE,TRUE
+9100BCHGRV,Birchgrove Rail Station,TRUE,TRUE
+9100BCKNHMH,Beckenham Hill Rail Station,TRUE,TRUE
+9100BCKNHMJ,Beckenham Junction Rail Station,TRUE,TRUE
+9100BCKY,Buckley Rail Station,TRUE,TRUE
+9100BCNGNOS,Birchington-On-Sea Rail Station,TRUE,TRUE
+9100BCNSFLD,Beaconsfield Rail Station,TRUE,TRUE
+9100BCSTN,Bicester North Rail Station,TRUE,TRUE
+9100BCWD,Bricket Wood Rail Station,TRUE,TRUE
+9100BDHMPTN,Bedhampton Rail Station,TRUE,TRUE
+9100BEARLEY,Bearley Rail Station,TRUE,TRUE
+9100BEAULY,Beauly Rail Station,TRUE,TRUE
+9100BEBNGTN,Bebington Rail Station,TRUE,TRUE
+9100BECCLES,Beccles Rail Station,TRUE,TRUE
+9100BEDFDM,Bedford Rail Station,TRUE,TRUE
+9100BEDWRTH,Bedworth Rail Station,TRUE,TRUE
+9100BELM,Belmont Rail Station,TRUE,TRUE
+9100BELPER,Belper Rail Station,TRUE,TRUE
+9100BELVEDR,Belvedere Rail Station,TRUE,TRUE
+9100BEMPTON,Bempton Rail Station,TRUE,TRUE
+9100BENFLET,Benfleet Rail Station,TRUE,TRUE
+9100BEREALS,Bere Alston Rail Station,TRUE,TRUE
+9100BERRYB,Berry Brow Rail Station,TRUE,TRUE
+9100BERWICK,Berwick Rail Station,TRUE,TRUE
+9100BESCRLA,Bescar Lane Rail Station,TRUE,TRUE
+9100BESJOHN,Bedford St Johns Rail Station,TRUE,TRUE
+9100BETSYCD,Betws-y-Coed Rail Station,TRUE,TRUE
+9100BEVERLY,Beverley Rail Station,TRUE,TRUE
+9100BEXHILL,Bexhill Rail Station,TRUE,TRUE
+9100BGLAN,Baglan Rail Station,TRUE,TRUE
+9100BHAMINT,Birmingham International Rail Station,TRUE,TRUE
+9100BHAMJEW,Jewellery Quarter Rail Station,TRUE,TRUE
+9100BHAMMRS,Birmingham Moor Street Rail Station,TRUE,TRUE
+9100BHAMNWS,Birmingham New Street Rail Station,TRUE,TRUE
+9100BHAMSNH,Birmingham Snow Hill Rail Station,TRUE,TRUE
+9100BILERCY,Billericay Rail Station,TRUE,TRUE
+9100BILSHST,Billingshurst Rail Station,TRUE,TRUE
+9100BKDLE,Birkdale Rail Station,TRUE,TRUE
+9100BKHLS,Brockholes Rail Station,TRUE,TRUE
+9100BKSWELL,Berkswell Rail Station,TRUE,TRUE
+9100BLAENAU,Blaenau Ffestiniog Rail Station,TRUE,TRUE
+9100BLCKPB,Blackpool Pleasure Beach Rail Station,TRUE,TRUE
+9100BLCKPLN,Blackpool North Rail Station,TRUE,TRUE
+9100BLCKS,Blackpool South Rail Station,TRUE,TRUE
+9100BLFR,London Blackfriars Rail Station,TRUE,TRUE
+9100BLKB,Blackburn Rail Station,TRUE,TRUE
+9100BLKHTH,Blackheath Rail Station,TRUE,TRUE
+9100BLKRDGE,Blackridge Rail Station,TRUE,TRUE
+9100BLKST,Blake Street Rail Station,TRUE,TRUE
+9100BLNDLAC,Blundellsands & Crosby Rail Station,TRUE,TRUE
+9100BLTNODR,Bolton-On-Dearne Rail Station,TRUE,TRUE
+9100BLTRNAB,Beltring Rail Station,TRUE,TRUE
+9100BLYBDGE,Blythe Bridge Rail Station,TRUE,TRUE
+9100BMBRBDG,Bamber Bridge Rail Station,TRUE,TRUE
+9100BMLY,Bramley (Hants) Rail Station,TRUE,TRUE
+9100BNBR,Banbury Rail Station,TRUE,TRUE
+9100BNGY,Bingley Rail Station,TRUE,TRUE
+9100BNRHYDN,Ben Rhydding Rail Station,TRUE,TRUE
+9100BNSLY,Barnsley Rail Station,TRUE,TRUE
+9100BNTEY,Bentley (Hants) Rail Station,TRUE,TRUE
+9100BNTFORD,Brentford Rail Station,TRUE,TRUE
+9100BNTHAM,Bentham Rail Station,TRUE,TRUE
+9100BNWK,Brunswick Rail Station,TRUE,TRUE
+9100BODMNPW,Bodmin Parkway Rail Station,TRUE,TRUE
+9100BOGNORR,Bognor Regis Rail Station,TRUE,TRUE
+9100BOLTON,Bolton Rail Station,TRUE,TRUE
+9100BOMO,Bournemouth Rail Station,TRUE,TRUE
+9100BOOTLE,Bootle (Cumbria) Rail Station,TRUE,TRUE
+9100BOOTLNS,Bootle New Strand Rail Station,TRUE,TRUE
+9100BOOTLOR,Bootle Oriel Road Rail Station,TRUE,TRUE
+9100BORNEND,Bourne End Rail Station,TRUE,TRUE
+9100BORTH,Borth Rail Station,TRUE,TRUE
+9100BORWGAW,Borough Green & Wrotham Rail Station,TRUE,TRUE
+9100BOSHAM,Bosham Rail Station,TRUE,TRUE
+9100BOSTON,Boston Rail Station,TRUE,TRUE
+9100BOURNVL,Bournville Rail Station,TRUE,TRUE
+9100BOWBRKH,Bow Brickhill Rail Station,TRUE,TRUE
+9100BRACKNL,Bracknell Rail Station,TRUE,TRUE
+9100BRADFS,Bradford Forster Square Rail Station,TRUE,TRUE
+9100BRADIN,Bradford Interchange Rail Station,TRUE,TRUE
+9100BRAINTR,Braintree Rail Station,TRUE,TRUE
+9100BRAMPTN,Brampton (Suffolk) Rail Station,TRUE,TRUE
+9100BRDING,Brading Rail Station,TRUE,TRUE
+9100BRDNML,Bardon Mill Rail Station,TRUE,TRUE
+9100BRFT,Broomfleet Rail Station,TRUE,TRUE
+9100BRGEND,Bridgend Rail Station,TRUE,TRUE
+9100BRGHTN,Brighton Rail Station,TRUE,TRUE
+9100BRHM,Barnham Rail Station,TRUE,TRUE
+9100BRHOUSE,Brighouse Rail Station,TRUE,TRUE
+9100BRIERFL,Brierfield Rail Station,TRUE,TRUE
+9100BRITFRY,Briton Ferry Rail Station,TRUE,TRUE
+9100BRITHDR,Brithdir Rail Station,TRUE,TRUE
+9100BRKNCPK,Conway Park Rail Station,TRUE,TRUE
+9100BRKNHDC,Birkenhead Central Rail Station,TRUE,TRUE
+9100BRLEYPK,Burley Park Rail Station,TRUE,TRUE
+9100BRMBRK,Bromborough Rake Rail Station,TRUE,TRUE
+9100BRMCRSS,Bromley Cross Rail Station,TRUE,TRUE
+9100BRMLYSR,Bramley (West Yorks) Rail Station,TRUE,TRUE
+9100BRMOUTH,Barmouth Rail Station,TRUE,TRUE
+9100BRNCHTN,Branchton Rail Station,TRUE,TRUE
+9100BRNHRST,Barnehurst Rail Station,TRUE,TRUE
+9100BRNSTPL,Barnstaple Rail Station,TRUE,TRUE
+9100BROADGR,Broad Green Rail Station,TRUE,TRUE
+9100BROMLYN,Bromley North Rail Station,TRUE,TRUE
+9100BROMLYS,Bromley South Rail Station,TRUE,TRUE
+9100BROXBRN,Broxbourne Rail Station,TRUE,TRUE
+9100BRSCGHB,Burscough Bridge Rail Station,TRUE,TRUE
+9100BRSCGHJ,Burscough Junction Rail Station,TRUE,TRUE
+9100BRSTLTM,Bristol Temple Meads Rail Station,TRUE,TRUE
+9100BRSTPWY,Bristol Parkway Rail Station,TRUE,TRUE
+9100BRTHMBR,Barton-On-Humber Rail Station,TRUE,TRUE
+9100BRTJYC,Burton Joyce Rail Station,TRUE,TRUE
+9100BRUSTAN,Brunstane Rail Station,TRUE,TRUE
+9100BRWCKUT,Berwick-Upon-Tweed Rail Station,TRUE,TRUE
+9100BRYSTNS,Braystones Rail Station,TRUE,TRUE
+9100BSAUKLD,Bishop Auckland Rail Station,TRUE,TRUE
+9100BSHPSFD,Bishops Stortford Rail Station,TRUE,TRUE
+9100BSNGSTK,Basingstoke Rail Station,TRUE,TRUE
+9100BSTEDMS,Bury St Edmunds Rail Station,TRUE,TRUE
+9100BTHGATE,Bathgate Rail Station,TRUE,TRUE
+9100BTLYSY,Bentley (South Yorks) Rail Station,TRUE,TRUE
+9100BTRSBY,Battersby Rail Station,TRUE,TRUE
+9100BUCKNHM,Buckenham Rail Station,TRUE,TRUE
+9100BUILTHR,Builth Road Rail Station,TRUE,TRUE
+9100BULWELL,Bulwell Rail Station,TRUE,TRUE
+9100BURGESH,Burgess Hill Rail Station,TRUE,TRUE
+9100BURLYIW,Burley-In-Wharfedale Rail Station,TRUE,TRUE
+9100BURNLYB,Burnley Barracks Rail Station,TRUE,TRUE
+9100BURNLYC,Burnley Central Rail Station,TRUE,TRUE
+9100BURNMR,Burnley Manchester Road Rail Station,TRUE,TRUE
+9100BURTNOT,Burton-On-Trent Rail Station,TRUE,TRUE
+9100BUXTON,Buxton Rail Station,TRUE,TRUE
+9100BXLYHTH,Bexleyheath Rail Station,TRUE,TRUE
+9100BXTD,Buxted Rail Station,TRUE,TRUE
+9100BYNEA,Bynea Rail Station,TRUE,TRUE
+9100CALSTCK,Calstock Rail Station,TRUE,TRUE
+9100CAMBDGE,Cambridge Rail Station,TRUE,TRUE
+9100CAMELON,Camelon Rail Station,TRUE,TRUE
+9100CANONST,London Cannon Street Rail Station,TRUE,TRUE
+9100CARDFBR,Cardiff Bay Rail Station,TRUE,TRUE
+9100CARK,Cark Rail Station,TRUE,TRUE
+9100CARLILE,Carlisle Rail Station,TRUE,TRUE
+9100CARMYLE,Carmyle Rail Station,TRUE,TRUE
+9100CARSWS,Caersws Rail Station,TRUE,TRUE
+9100CASTLFD,Castleford Rail Station,TRUE,TRUE
+9100CATFBDG,Catford Bridge Rail Station,TRUE,TRUE
+9100CATTAL,Cattal Rail Station,TRUE,TRUE
+9100CAUSLND,Causeland Rail Station,TRUE,TRUE
+9100CBAY,Colwyn Bay Rail Station,TRUE,TRUE
+9100CBORNE,Camborne Rail Station,TRUE,TRUE
+9100CCARY,Castle Cary Rail Station,TRUE,TRUE
+9100CFLATTS,Crossflatts Rail Station,TRUE,TRUE
+9100CFPK,Crofton Park Rail Station,TRUE,TRUE
+9100CHADHDD,Chafford Hundred Rail Station,TRUE,TRUE
+9100CHARTHM,Chartham Rail Station,TRUE,TRUE
+9100CHASNRD,Chassen Road Rail Station,TRUE,TRUE
+9100CHATHAM,Chatham Rail Station,TRUE,TRUE
+9100CHBURY,Charlbury Rail Station,TRUE,TRUE
+9100CHCHSTR,Chichester Rail Station,TRUE,TRUE
+9100CHDWLHT,Chadwell Heath Rail Station,TRUE,TRUE
+9100CHELFD,Chelford Rail Station,TRUE,TRUE
+9100CHESHNT,Cheshunt Rail Station,TRUE,TRUE
+9100CHFD,Chesterfield Rail Station,TRUE,TRUE
+9100CHFN,Church Fenton Rail Station,TRUE,TRUE
+9100CHHL,Chathill Rail Station,TRUE,TRUE
+9100CHINGFD,Chingford Rail Station,TRUE,TRUE
+9100CHIPNHM,Chippenham Rail Station,TRUE,TRUE
+9100CHLFNAL,Chalfont & Latimer Rail Station,TRUE,TRUE
+9100CHLMSFD,Chelmsford Rail Station,TRUE,TRUE
+9100CHLSFLD,Chelsfield Rail Station,TRUE,TRUE
+9100CHLTNHM,Cheltenham Spa Rail Station,TRUE,TRUE
+9100CHORBUK,Buckshaw Parkway Rail Station,TRUE,TRUE
+9100CHORLEY,Chorley Rail Station,TRUE,TRUE
+9100CHPLTWN,Chapeltown Rail Station,TRUE,TRUE
+9100CHRNGXG,Charing Cross (Glasgow) Rail Station,TRUE,TRUE
+9100CHRX,London Charing Cross Rail Station,TRUE,TRUE
+9100CHST,Chester Rail Station,TRUE,TRUE
+9100CHTLRT,Chatelherault Rail Station,TRUE,TRUE
+9100CHTR,Cherry Tree Rail Station,TRUE,TRUE
+9100CHTSEY,Chertsey Rail Station,TRUE,TRUE
+9100CKHL,Corkerhill Rail Station,TRUE,TRUE
+9100CLACTON,Clacton-On-Sea Rail Station,TRUE,TRUE
+9100CLARBRD,Clarbeston Road Rail Station,TRUE,TRUE
+9100CLCHSTR,Colchester Rail Station,TRUE,TRUE
+9100CLDNNRB,Caledonian Rd & Barnsbury Rail Station,TRUE,TRUE
+9100CLDRCRX,Caldercruix Rail Station,TRUE,TRUE
+9100CLITHRO,Clitheroe Rail Station,TRUE,TRUE
+9100CLPHMJC,Clapham Junction Rail Station,TRUE,TRUE
+9100CLST,Chester-Le-Street Rail Station,TRUE,TRUE
+9100CLTHRPS,Cleethorpes Rail Station,TRUE,TRUE
+9100CLTN,Clifton Rail Station,TRUE,TRUE
+9100CLWALL,Colwall Rail Station,TRUE,TRUE
+9100CLYNDRW,Clunderwen Rail Station,TRUE,TRUE
+9100CMBH,Cwmbach Rail Station,TRUE,TRUE
+9100CMBLEY,Camberley Rail Station,TRUE,TRUE
+9100CMDNRD,Camden Road Rail Station,TRUE,TRUE
+9100CMER,Cromer Rail Station,TRUE,TRUE
+9100CMTHN,Carmarthen Rail Station,TRUE,TRUE
+9100CNDAW,Canada Water Rail Station,TRUE,TRUE
+9100CNNB,Canonbury Rail Station,TRUE,TRUE
+9100CNTBE,Canterbury East Rail Station,TRUE,TRUE
+9100CNTBW,Canterbury West Rail Station,TRUE,TRUE
+9100CNTLEY,Cantley Rail Station,TRUE,TRUE
+9100COLESHL,Coleshill Parkway Rail Station,TRUE,TRUE
+9100COLNE,Colne Rail Station,TRUE,TRUE
+9100COLSTWN,Coulsdon Town Rail Station,TRUE,TRUE
+9100CONBRGH,Conisbrough Rail Station,TRUE,TRUE
+9100CONGLTN,Congleton Rail Station,TRUE,TRUE
+9100CONONLY,Cononley Rail Station,TRUE,TRUE
+9100CONWY,Conwy Rail Station,TRUE,TRUE
+9100CORBY,Corby Rail Station,TRUE,TRUE
+9100COSHAM,Cosham Rail Station,TRUE,TRUE
+9100COTNGLY,Cottingley Rail Station,TRUE,TRUE
+9100COVNTRY,Coventry Rail Station,TRUE,TRUE
+9100CRADLYH,Cradley Heath Rail Station,TRUE,TRUE
+9100CRAWLEY,Crawley Rail Station,TRUE,TRUE
+9100CRCK,Corkickle Rail Station,TRUE,TRUE
+9100CRDFCEN,Cardiff Central Rail Station,TRUE,TRUE
+9100CREDITN,Crediton Rail Station,TRUE,TRUE
+9100CREWE,Crewe Rail Station,TRUE,TRUE
+9100CRGDRN,Craigendoran Rail Station,TRUE,TRUE
+9100CRICCTH,Criccieth Rail Station,TRUE,TRUE
+9100CRKRN,Crewkerne Rail Station,TRUE,TRUE
+9100CRLN,Charlton Rail Station,TRUE,TRUE
+9100CRMLNGT,Cramlington Rail Station,TRUE,TRUE
+9100CROKSTN,Crookston Rail Station,TRUE,TRUE
+9100CROMFD,Cromford Rail Station,TRUE,TRUE
+9100CROT,Croston Rail Station,TRUE,TRUE
+9100CROWLE,Crowle Rail Station,TRUE,TRUE
+9100CRPHLY,Caerphilly Rail Station,TRUE,TRUE
+9100CRPNDPK,Carpenders Park Rail Station,TRUE,TRUE
+9100CRSKEYS,Crosskeys Rail Station,TRUE,TRUE
+9100CRTN,Carlton Rail Station,TRUE,TRUE
+9100CRWLL,Creswell Rail Station,TRUE,TRUE
+9100CSEAH,Imperial Wharf Rail Station,TRUE,TRUE
+9100CSGT,Cross Gates Rail Station,TRUE,TRUE
+9100CSTL,Castleton Rail Station,TRUE,TRUE
+9100CTMSLNK,City Thameslink Rail Station,TRUE,TRUE
+9100CTNM,Castleton Moor Rail Station,TRUE,TRUE
+9100CTTGHM,Cottingham Rail Station,TRUE,TRUE
+9100CUPAR,Cupar Rail Station,TRUE,TRUE
+9100CWMBRAN,Cwmbran Rail Station,TRUE,TRUE
+9100CXTN,Cuxton Rail Station,TRUE,TRUE
+9100DALGETY,Dalgety Bay Rail Station,TRUE,TRUE
+9100DALMUIR,Dalmuir Rail Station,TRUE,TRUE
+9100DALS,Dalston Junction Rail Station,TRUE,TRUE
+9100DALSTON,Dalston Rail Station,TRUE,TRUE
+9100DANBY,Danby Rail Station,TRUE,TRUE
+9100DANESCT,Danescourt Rail Station,TRUE,TRUE
+9100DARNALL,Darnall Rail Station,TRUE,TRUE
+9100DARTFD,Dartford Rail Station,TRUE,TRUE
+9100DARWEN,Darwen Rail Station,TRUE,TRUE
+9100DATCHET,Datchet Rail Station,TRUE,TRUE
+9100DAWLISH,Dawlish Rail Station,TRUE,TRUE
+9100DAWSHLM,Kelvindale Rail Station,TRUE,TRUE
+9100DEAN,Dean Rail Station,TRUE,TRUE
+9100DEGANWY,Deganwy Rail Station,TRUE,TRUE
+9100DEIGHTN,Deighton Rail Station,TRUE,TRUE
+9100DELAMER,Delamere Rail Station,TRUE,TRUE
+9100DENHAM,Denham Rail Station,TRUE,TRUE
+9100DENMRKH,Denmark Hill Rail Station,TRUE,TRUE
+9100DENT,Dent Rail Station,TRUE,TRUE
+9100DGLROAD,Dingle Road Rail Station,TRUE,TRUE
+9100DIDCOTP,Didcot Parkway Rail Station,TRUE,TRUE
+9100DINASP,Dinas Powys Rail Station,TRUE,TRUE
+9100DINASR,Dinas (Rhondda) Rail Station,TRUE,TRUE
+9100DINSDAL,Dinsdale Rail Station,TRUE,TRUE
+9100DISLEY,Disley Rail Station,TRUE,TRUE
+9100DLTN,Darlington Rail Station,TRUE,TRUE
+9100DLWYDLN,Dolwyddelan Rail Station,TRUE,TRUE
+9100DNDL,Denby Dale Rail Station,TRUE,TRUE
+9100DNFRMQM,Dunfermline Queen Margaret Rail Station,TRUE,TRUE
+9100DNLP,Dunlop Rail Station,TRUE,TRUE
+9100DNSN,Dunston Rail Station,TRUE,TRUE
+9100DNTG,Dinting Rail Station,TRUE,TRUE
+9100DODWRTH,Dodworth Rail Station,TRUE,TRUE
+9100DONC,Doncaster Rail Station,TRUE,TRUE
+9100DORE,Dore & Totley Rail Station,TRUE,TRUE
+9100DORIDGE,Dorridge Rail Station,TRUE,TRUE
+9100DORKING,Dorking Rail Station,TRUE,TRUE
+9100DOVERP,Dover Priory Rail Station,TRUE,TRUE
+9100DOVRCRT,Dovercourt Rail Station,TRUE,TRUE
+9100DOWNHAM,Downham Market Rail Station,TRUE,TRUE
+9100DRBY,Derby Rail Station,TRUE,TRUE
+9100DRHM,Durham Rail Station,TRUE,TRUE
+9100DRIFILD,Driffield Rail Station,TRUE,TRUE
+9100DRIGG,Drigg Rail Station,TRUE,TRUE
+9100DRMFCHR,Drumfrochar Rail Station,TRUE,TRUE
+9100DRMGLCH,Drumgelloch Rail Station,TRUE,TRUE
+9100DRNGTOS,Durrington-On-Sea Rail Station,TRUE,TRUE
+9100DRONFLD,Dronfield Rail Station,TRUE,TRUE
+9100DRTN,Darton Rail Station,TRUE,TRUE
+9100DUDESTN,Duddeston Rail Station,TRUE,TRUE
+9100DULNGHM,Dullingham Rail Station,TRUE,TRUE
+9100DUNBAR,Dunbar Rail Station,TRUE,TRUE
+9100DUNDETB,Dundee Rail Station,TRUE,TRUE
+9100DURSLEY,Cam & Dursley Rail Station,TRUE,TRUE
+9100DVHL,Dove Holes Rail Station,TRUE,TRUE
+9100DWBY,Dewsbury Rail Station,TRUE,TRUE
+9100EASTBRK,Eastbrook Rail Station,TRUE,TRUE
+9100EBOURNE,Eastbourne Rail Station,TRUE,TRUE
+9100EBSFDOM,Ebbsfleet International Rail Station,TRUE,TRUE
+9100EBWVPWY,Ebbw Vale Parkway Rail Station,TRUE,TRUE
+9100ECPK,Eccleston Park Rail Station,TRUE,TRUE
+9100ECROYDN,East Croydon Rail Station,TRUE,TRUE
+9100EDALE,Edale Rail Station,TRUE,TRUE
+9100EDIDBRY,East Didsbury Rail Station,TRUE,TRUE
+9100EDINBUR,Edinburgh Waverley Rail Station,TRUE,TRUE
+9100EDINPRK,Edinburgh Park Rail Station,TRUE,TRUE
+9100EGGESFD,Eggesford Rail Station,TRUE,TRUE
+9100EGHAM,Egham Rail Station,TRUE,TRUE
+9100EGLSCLF,Eaglescliffe Rail Station,TRUE,TRUE
+9100EGRFRTH,East Garforth Rail Station,TRUE,TRUE
+9100EKILBRD,East Kilbride Rail Station,TRUE,TRUE
+9100ELGH,Eastleigh Rail Station,TRUE,TRUE
+9100ELMERSE,Elmers End Rail Station,TRUE,TRUE
+9100ELMSWEL,Elmswell Rail Station,TRUE,TRUE
+9100ELSC,Elsecar Rail Station,TRUE,TRUE
+9100ELTHAM,Eltham Rail Station,TRUE,TRUE
+9100ELYY,Ely Rail Station,TRUE,TRUE
+9100EMPKWAY,East Midlands Parkway Rail Station,TRUE,TRUE
+9100ENFLDLK,Enfield Lock Rail Station,TRUE,TRUE
+9100ENFLDTN,Enfield Town Rail Station,TRUE,TRUE
+9100EPSM,Epsom Rail Station,TRUE,TRUE
+9100ERGNCHP,Energlyn and Churchill Park Rail Station,TRUE,TRUE
+9100ERLFLD,Earlsfield Rail Station,TRUE,TRUE
+9100ESHS,Easterhouse Rail Station,TRUE,TRUE
+9100ESTFLDS,Mitcham Eastfields Rail Station,TRUE,TRUE
+9100ESTRNGT,Eastrington Rail Station,TRUE,TRUE
+9100ETILBRY,East Tilbury Rail Station,TRUE,TRUE
+9100EUSTON,London Euston Rail Station,TRUE,TRUE
+9100EUXT,Euxton Balshaw Lane Rail Station,TRUE,TRUE
+9100EXETERC,Exeter Central Rail Station,TRUE,TRUE
+9100EXETRSD,Exeter St David'S Rail Station,TRUE,TRUE
+9100EXHIBTC,Exhibition Centre Rail Station,TRUE,TRUE
+9100EXMOUTH,Exmouth Rail Station,TRUE,TRUE
+9100FAIRLIE,Fairlie Rail Station,TRUE,TRUE
+9100FALMTHD,Falmouth Docks Rail Station,TRUE,TRUE
+9100FALMTHT,Falmouth Town Rail Station,TRUE,TRUE
+9100FAREHAM,Fareham Rail Station,TRUE,TRUE
+9100FARNHAM,Farnham Rail Station,TRUE,TRUE
+9100FAVRSHM,Faversham Rail Station,TRUE,TRUE
+9100FAZKRLY,Fazakerley Rail Station,TRUE,TRUE
+9100FELTHAM,Feltham Rail Station,TRUE,TRUE
+9100FENCHRS,London Fenchurch Street Rail Station,TRUE,TRUE
+9100FENITON,Feniton Rail Station,TRUE,TRUE
+9100FERNHIL,Fernhill Rail Station,TRUE,TRUE
+9100FERRIBY,Ferriby Rail Station,TRUE,TRUE
+9100FGDHBR,Fishguard Harbour Rail Station,TRUE,TRUE
+9100FGDHGWK,Fishguard & Goodwick Rail Station,TRUE,TRUE
+9100FILEY,Filey Rail Station,TRUE,TRUE
+9100FITZWLM,Fitzwilliam Rail Station,TRUE,TRUE
+9100FIVEWYS,Five Ways Rail Station,TRUE,TRUE
+9100FLIMBY,Flimby Rail Station,TRUE,TRUE
+9100FLINT,Flint Rail Station,TRUE,TRUE
+9100FLIXTON,Flixton Rail Station,TRUE,TRUE
+9100FLKSTNC,Folkestone Central Rail Station,TRUE,TRUE
+9100FLXSTOW,Felixstowe Rail Station,TRUE,TRUE
+9100FORESTH,Forest Hill Rail Station,TRUE,TRUE
+9100FORMBY,Formby Rail Station,TRUE,TRUE
+9100FORRES,Forres Rail Station,TRUE,TRUE
+9100FOXFILD,Foxfield Rail Station,TRUE,TRUE
+9100FRATTON,Fratton Rail Station,TRUE,TRUE
+9100FRBRMN,Farnborough (Main) Rail Station,TRUE,TRUE
+9100FRBRNTH,Farnborough North Rail Station,TRUE,TRUE
+9100FRDSHM,Frodsham Rail Station,TRUE,TRUE
+9100FRINTON,Frinton On Sea Rail Station,TRUE,TRUE
+9100FRNDNLT,Farringdon (London) Rail Station,TRUE,TRUE
+9100FRNW,Farnworth Rail Station,TRUE,TRUE
+9100FROME,Frome Rail Station,TRUE,TRUE
+9100FRSHFLD,Freshfield Rail Station,TRUE,TRUE
+9100FRTWLM,Fort William Rail Station,TRUE,TRUE
+9100FRWATER,Fairwater Rail Station,TRUE,TRUE
+9100FRZNGHL,Frizinghall Rail Station,TRUE,TRUE
+9100FSTR,Fenny Stratford Rail Station,TRUE,TRUE
+9100FTHRSTN,Featherstone Rail Station,TRUE,TRUE
+9100FURNESV,Furness Vale Rail Station,TRUE,TRUE
+9100FURZEP,Furze Platt Rail Station,TRUE,TRUE
+9100GALTILL,Smethwick Galton Bridge Rail Station,TRUE,TRUE
+9100GARTH,Garth (Powys) Rail Station,TRUE,TRUE
+9100GATHRST,Gathurst Rail Station,TRUE,TRUE
+9100GATLEY,Gatley Rail Station,TRUE,TRUE
+9100GBGHLRD,Gainsborough Lea Road Rail Station,TRUE,TRUE
+9100GBNK,Greenbank Rail Station,TRUE,TRUE
+9100GBROC,Gainsborough Central Rail Station,TRUE,TRUE
+9100GERRDSX,Gerrards Cross Rail Station,TRUE,TRUE
+9100GGLSWCK,Giggleswick Rail Station,TRUE,TRUE
+9100GLAISDL,Glaisdale Rail Station,TRUE,TRUE
+9100GLASHTN,Glasshoughton Rail Station,TRUE,TRUE
+9100GLAZBRK,Glazebrook Rail Station,TRUE,TRUE
+9100GLDTHRP,Goldthorpe Rail Station,TRUE,TRUE
+9100GLGC,Glasgow Central Rail Station,TRUE,TRUE
+9100GLGQHL,Glasgow Queen Street Rail Station,TRUE,TRUE
+9100GLNCNWY,Glan Conwy Rail Station,TRUE,TRUE
+9100GLNGHMK,Gillingham (Kent) Rail Station,TRUE,TRUE
+9100GLOSTER,Gloucester Rail Station,TRUE,TRUE
+9100GLSP,Glossop Rail Station,TRUE,TRUE
+9100GNHT,Greenhithe For Bluewater Rail Station,TRUE,TRUE
+9100GNWH,Greenwich Rail Station,TRUE,TRUE
+9100GOBOWEN,Gobowen Rail Station,TRUE,TRUE
+9100GOLSPIE,Golspie Rail Station,TRUE,TRUE
+9100GOOLE,Goole Rail Station,TRUE,TRUE
+9100GOOSTRY,Goostrey Rail Station,TRUE,TRUE
+9100GORNGBS,Goring-By-Sea Rail Station,TRUE,TRUE
+9100GOSPLOK,Gospel Oak Rail Station,TRUE,TRUE
+9100GOUROCK,Gourock Rail Station,TRUE,TRUE
+9100GOVS,Grange-Over-Sands Rail Station,TRUE,TRUE
+9100GOWERTN,Gowerton Rail Station,TRUE,TRUE
+9100GOXHILL,Goxhill Rail Station,TRUE,TRUE
+9100GRAYS,Grays Rail Station,TRUE,TRUE
+9100GREENRD,Green Road Rail Station,TRUE,TRUE
+9100GRETGRN,Gretna Green Rail Station,TRUE,TRUE
+9100GRGMASJ,Georgemas Junction Rail Station,TRUE,TRUE
+9100GRMSBYD,Grimsby Docks Rail Station,TRUE,TRUE
+9100GRMSBYT,Grimsby Town Rail Station,TRUE,TRUE
+9100GRNDLFD,Grindleford Rail Station,TRUE,TRUE
+9100GROSMNT,Grosmont Rail Station,TRUE,TRUE
+9100GRTCSH,Gartcosh Rail Station,TRUE,TRUE
+9100GRTHMG,Garth (Bridgend) Rail Station,TRUE,TRUE
+9100GRVSEND,Gravesend Rail Station,TRUE,TRUE
+9100GTAYTON,Great Ayton Rail Station,TRUE,TRUE
+9100GTCOATS,Great Coates Rail Station,TRUE,TRUE
+9100GTHM,Grantham Rail Station,TRUE,TRUE
+9100GTMLVRN,Great Malvern Rail Station,TRUE,TRUE
+9100GTMSNDN,Great Missenden Rail Station,TRUE,TRUE
+9100GTSHDMC,Metrocentre Rail Station,TRUE,TRUE
+9100GTWK,Gatwick Airport Rail Station,TRUE,TRUE
+9100GUILDFD,Guildford Rail Station,TRUE,TRUE
+9100GUISELY,Guiseley Rail Station,TRUE,TRUE
+9100GUNTON,Gunton Rail Station,TRUE,TRUE
+9100GYPSYLA,Gypsy Lane Rail Station,TRUE,TRUE
+9100HABRO,Habrough Rail Station,TRUE,TRUE
+9100HACKNYC,Hackney Central Rail Station,TRUE,TRUE
+9100HACKNYW,Hackney Wick Rail Station,TRUE,TRUE
+9100HADFILD,Hadfield Rail Station,TRUE,TRUE
+9100HADMATP,Haddenham & Thame Parkway Rail Station,TRUE,TRUE
+9100HAGFOLD,Hag Fold Rail Station,TRUE,TRUE
+9100HAGGERS,Haggerston Rail Station,TRUE,TRUE
+9100HAGT,Harrogate Rail Station,TRUE,TRUE
+9100HALE,Hale Rail Station,TRUE,TRUE
+9100HALLRD,Hall Road Rail Station,TRUE,TRUE
+9100HALSWTH,Halesworth Rail Station,TRUE,TRUE
+9100HALW,Halewood Rail Station,TRUE,TRUE
+9100HAMERTN,Hammerton Rail Station,TRUE,TRUE
+9100HAMSTED,Hamstead (Birmingham) Rail Station,TRUE,TRUE
+9100HAMTSQ,Hamilton Square Rail Station,TRUE,TRUE
+9100HAPTON,Hapton Rail Station,TRUE,TRUE
+9100HARMYRS,Hairmyres Rail Station,TRUE,TRUE
+9100HARTFD,Hartford Rail Station,TRUE,TRUE
+9100HASLEMR,Haslemere Rail Station,TRUE,TRUE
+9100HASTING,Hastings Rail Station,TRUE,TRUE
+9100HAVANT,Havant Rail Station,TRUE,TRUE
+9100HAWDNBG,Hawarden Bridge Rail Station,TRUE,TRUE
+9100HAYESAH,Hayes & Harlington Rail Station,TRUE,TRUE
+9100HAYLE,Hayle Rail Station,TRUE,TRUE
+9100HAYMRKT,Haymarket Rail Station,TRUE,TRUE
+9100HAZL,Hazel Grove Rail Station,TRUE,TRUE
+9100HBRY,Hartlebury Rail Station,TRUE,TRUE
+9100HCHP,Holmes Chapel Rail Station,TRUE,TRUE
+9100HCRT,Hampton Court Rail Station,TRUE,TRUE
+9100HDNS,Hednesford Rail Station,TRUE,TRUE
+9100HDRSFLD,Huddersfield Rail Station,TRUE,TRUE
+9100HEALING,Healing Rail Station,TRUE,TRUE
+9100HEATHLL,Heath Low Level Rail Station,TRUE,TRUE
+9100HELIFLD,Hellifield Rail Station,TRUE,TRUE
+9100HENSALL,Hensall Rail Station,TRUE,TRUE
+9100HEREFRD,Hereford Rail Station,TRUE,TRUE
+9100HERNEH,Herne Hill Rail Station,TRUE,TRUE
+9100HERTFDE,Hertford East Rail Station,TRUE,TRUE
+9100HESSLE,Hessle Rail Station,TRUE,TRUE
+9100HESWALL,Heswall Rail Station,TRUE,TRUE
+9100HEWORTH,Heworth Rail Station,TRUE,TRUE
+9100HEYMST,Heysham Port Rail Station,TRUE,TRUE
+9100HFDN,Hertford North Rail Station,TRUE,TRUE
+9100HGHNGTN,Heighington Rail Station,TRUE,TRUE
+9100HINCKLY,Hinckley Rail Station,TRUE,TRUE
+9100HITW,Hall I' Th' Wood Rail Station,TRUE,TRUE
+9100HLDG,Heald Green Rail Station,TRUE,TRUE
+9100HLFX,Halifax Rail Station,TRUE,TRUE
+9100HLGN,Hall Green Rail Station,TRUE,TRUE
+9100HLNSBRC,Helensburgh Central Rail Station,TRUE,TRUE
+9100HLNSBRU,Helensburgh Upper Rail Station,TRUE,TRUE
+9100HLTWHST,Haltwhistle Rail Station,TRUE,TRUE
+9100HLYH,Holyhead Rail Station,TRUE,TRUE
+9100HMPDNPK,Hampden Park Rail Station,TRUE,TRUE
+9100HMPHRYP,Humphrey Park Rail Station,TRUE,TRUE
+9100HMST,Ham Street Rail Station,TRUE,TRUE
+9100HNDSHWT,The Hawthorns Rail Station,TRUE,TRUE
+9100HNLYOT,Henley-On-Thames Rail Station,TRUE,TRUE
+9100HNTNGDN,Huntingdon Rail Station,TRUE,TRUE
+9100HOMRTON,Homerton Rail Station,TRUE,TRUE
+9100HONYBRN,Honeybourne Rail Station,TRUE,TRUE
+9100HOOTON,Hooton Rail Station,TRUE,TRUE
+9100HOPC,Hope (Flintshire) Rail Station,TRUE,TRUE
+9100HORLEY,Horley Rail Station,TRUE,TRUE
+9100HORSHAM,Horsham Rail Station,TRUE,TRUE
+9100HORWICH,Horwich Parkway Rail Station,TRUE,TRUE
+9100HOSCAR,Hoscar Rail Station,TRUE,TRUE
+9100HOVE,Hove Rail Station,TRUE,TRUE
+9100HOWDEN,Howden Rail Station,TRUE,TRUE
+9100HOWWOOD,How Wood Rail Station,TRUE,TRUE
+9100HOXTON,Hoxton Rail Station,TRUE,TRUE
+9100HOYLAKE,Hoylake Rail Station,TRUE,TRUE
+9100HRGYGL,Harringay Green Lanes Rail Station,TRUE,TRUE
+9100HRLNGRD,Harling Road Rail Station,TRUE,TRUE
+9100HRLWTWN,Harlow Town Rail Station,TRUE,TRUE
+9100HRNBPK,Hornbeam Park Rail Station,TRUE,TRUE
+9100HROW,Harrow & Wealdstone Rail Station,TRUE,TRUE
+9100HRSTGRN,Hurst Green Rail Station,TRUE,TRUE
+9100HRTLEPL,Hartlepool Rail Station,TRUE,TRUE
+9100HSFT,Horsforth Rail Station,TRUE,TRUE
+9100HTCP,Heaton Chapel Rail Station,TRUE,TRUE
+9100HTFLASF,Hatfield & Stainforth Rail Station,TRUE,TRUE
+9100HTNCRNS,Hutton Cranswick Rail Station,TRUE,TRUE
+9100HTRWAPT,Heathrow Airport T123 Rail Station,TRUE,TRUE
+9100HTRWTM4,Heathrow Airport T4 Rail Station,TRUE,TRUE
+9100HTRWTM5,Heathrow Airport T5 Rail Station,TRUE,TRUE
+9100HUCKNAL,Hucknall Rail Station,TRUE,TRUE
+9100HULL,Hull Rail Station,TRUE,TRUE
+9100HUNCOAT,Huncoat Rail Station,TRUE,TRUE
+9100HUNMNBY,Hunmanby Rail Station,TRUE,TRUE
+9100HUYTON,Huyton Rail Station,TRUE,TRUE
+9100HWKHEAD,Hawkhead Rail Station,TRUE,TRUE
+9100HWYCOMB,High Wycombe Rail Station,TRUE,TRUE
+9100HYDB,Haydon Bridge Rail Station,TRUE,TRUE
+9100HYKEHAM,Hykeham Rail Station,TRUE,TRUE
+9100HYNDLND,Hyndland Rail Station,TRUE,TRUE
+9100HYWRDSH,Haywards Heath Rail Station,TRUE,TRUE
+9100IBMM,IBM Halt Rail Station,TRUE,TRUE
+9100IFIELD,Ifield Rail Station,TRUE,TRUE
+9100ILKLEY,Ilkley Rail Station,TRUE,TRUE
+9100INEL,Ince & Elton Rail Station,TRUE,TRUE
+9100INGTSTN,Ingatestone Rail Station,TRUE,TRUE
+9100INVERKP,Inverkip Rail Station,TRUE,TRUE
+9100IPSWICH,Ipswich Rail Station,TRUE,TRUE
+9100ISLIP,Islip Rail Station,TRUE,TRUE
+9100IVRKTHG,Inverkeithing Rail Station,TRUE,TRUE
+9100IVRNESS,Inverness Rail Station,TRUE,TRUE
+9100IVYBDGE,Ivybridge Rail Station,TRUE,TRUE
+9100JAMESST,Liverpool James Street Rail Station,TRUE,TRUE
+9100JHNSTND,Johnston Rail Station,TRUE,TRUE
+9100KCLD,Kirkcaldy Rail Station,TRUE,TRUE
+9100KDRMNST,Kidderminster Rail Station,TRUE,TRUE
+9100KEARSLY,Kearsley Rail Station,TRUE,TRUE
+9100KEIGHLY,Keighley Rail Station,TRUE,TRUE
+9100KEITH,Keith Rail Station,TRUE,TRUE
+9100KENOLYM,Kensington Olympia Rail Station,TRUE,TRUE
+9100KETR,Kettering Rail Station,TRUE,TRUE
+9100KEWGRDN,Kew Gardens Rail Station,TRUE,TRUE
+9100KGSTON,Kingston Rail Station,TRUE,TRUE
+9100KIDBROK,Kidbrooke Rail Station,TRUE,TRUE
+9100KIDWELY,Kidwelly Rail Station,TRUE,TRUE
+9100KIRKHAM,Kirkham & Wesham Rail Station,TRUE,TRUE
+9100KKBY,Kirkby Rail Station,TRUE,TRUE
+9100KKSNDAL,Kirk Sandall Rail Station,TRUE,TRUE
+9100KLDL,Kildale Rail Station,TRUE,TRUE
+9100KLYNN,Kings Lynn Rail Station,TRUE,TRUE
+9100KNGX,London Kings Cross Rail Station,TRUE,TRUE
+9100KNIGHTN,Knighton Rail Station,TRUE,TRUE
+9100KNLY,Kenley Rail Station,TRUE,TRUE
+9100KNRSBGH,Knaresborough Rail Station,TRUE,TRUE
+9100KNUTSFD,Knutsford Rail Station,TRUE,TRUE
+9100KNYMPTN,Kings Nympton Rail Station,TRUE,TRUE
+9100KRKBYIF,Kirkby-In-Furness Rail Station,TRUE,TRUE
+9100KRKDALE,Kirkdale Rail Station,TRUE,TRUE
+9100KRTNLND,Kirton Lindsey Rail Station,TRUE,TRUE
+9100KTBK,Kents Bank Rail Station,TRUE,TRUE
+9100KVTNBDG,Kiveton Bridge Rail Station,TRUE,TRUE
+9100KVTNPK,Kiveton Park Rail Station,TRUE,TRUE
+9100KYLELSH,Kyle Of Lochalsh Rail Station,TRUE,TRUE
+9100LAKEIOW,Lake Rail Station,TRUE,TRUE
+9100LAKNHTH,Lakenheath Rail Station,TRUE,TRUE
+9100LANARK,Lanark Rail Station,TRUE,TRUE
+9100LANCSTR,Lancaster Rail Station,TRUE,TRUE
+9100LANDUDJ,Llandudno Junction Rail Station,TRUE,TRUE
+9100LANFRFC,Llanfairfechan Rail Station,TRUE,TRUE
+9100LARBERT,Larbert Rail Station,TRUE,TRUE
+9100LARGS,Largs Rail Station,TRUE,TRUE
+9100LARKHAL,Larkhall Rail Station,TRUE,TRUE
+9100LAYTON,Layton Rail Station,TRUE,TRUE
+9100LAZKRKO,Lazonby & Kirkoswald Rail Station,TRUE,TRUE
+9100LCHC,Lichfield City Rail Station,TRUE,TRUE
+9100LCKRBIE,Lockerbie Rail Station,TRUE,TRUE
+9100LDLNGTN,Lidlington Rail Station,TRUE,TRUE
+9100LDYW,Ladywell Rail Station,TRUE,TRUE
+9100LEAHALL,Lea Hall Rail Station,TRUE,TRUE
+9100LEALHLM,Lealholm Rail Station,TRUE,TRUE
+9100LEASOWE,Leasowe Rail Station,TRUE,TRUE
+9100LEEDS,Leeds Rail Station,TRUE,TRUE
+9100LEGR,Lea Green Rail Station,TRUE,TRUE
+9100LEOMNST,Leominster Rail Station,TRUE,TRUE
+9100LESTER,Leicester Rail Station,TRUE,TRUE
+9100LETHRHD,Leatherhead Rail Station,TRUE,TRUE
+9100LEUCHRS,Leuchars Rail Station,TRUE,TRUE
+9100LEWES,Lewes Rail Station,TRUE,TRUE
+9100LEWISHM,Lewisham Rail Station,TRUE,TRUE
+9100LGFD,Longfield Rail Station,TRUE,TRUE
+9100LGRN,Langley Green Rail Station,TRUE,TRUE
+9100LGWITH,Langwith - Whaley Thorns Rail Station,TRUE,TRUE
+9100LGWOOD,Lingwood Rail Station,TRUE,TRUE
+9100LHONSEA,Leigh-On-Sea Rail Station,TRUE,TRUE
+9100LINCLNC,Lincoln Central Rail Station,TRUE,TRUE
+9100LISKARD,Liskeard Rail Station,TRUE,TRUE
+9100LISS,Liss Rail Station,TRUE,TRUE
+9100LIVST,London Liverpool Street Rail Station,TRUE,TRUE
+9100LKWD,Lockwood Rail Station,TRUE,TRUE
+9100LLDODW,Llandrindod Rail Station,TRUE,TRUE
+9100LLDVERY,Llandovery Rail Station,TRUE,TRUE
+9100LLGADOG,Llangadog Rail Station,TRUE,TRUE
+9100LLHARAN,Llanharan Rail Station,TRUE,TRUE
+9100LLHLETH,Llanhilleth Rail Station,TRUE,TRUE
+9100LLNLLI,Llanelli Rail Station,TRUE,TRUE
+9100LLNSMLT,Llansamlet Rail Station,TRUE,TRUE
+9100LLNWTMR,Llantwit Major Rail Station,TRUE,TRUE
+9100LMNGTNS,Leamington Spa Rail Station,TRUE,TRUE
+9100LNCG,Lancing Rail Station,TRUE,TRUE
+9100LNDNBDE,London Bridge Rail Station,TRUE,TRUE
+9100LNGP,Longport Rail Station,TRUE,TRUE
+9100LNLTHGW,Linlithgow Rail Station,TRUE,TRUE
+9100LNRWST,Llanrwst Rail Station,TRUE,TRUE
+9100LOGHBRO,Loughborough Rail Station,TRUE,TRUE
+9100LONGBCK,Longbeck Rail Station,TRUE,TRUE
+9100LOOE,Looe Rail Station,TRUE,TRUE
+9100LOSTCKP,Lostock (Parkway) Rail Station,TRUE,TRUE
+9100LOWSTFT,Lowestoft Rail Station,TRUE,TRUE
+9100LPRESTN,Long Preston Rail Station,TRUE,TRUE
+9100LRNCKRK,Laurencekirk Rail Station,TRUE,TRUE
+9100LSTH,Lostock Hall Rail Station,TRUE,TRUE
+9100LSYDNHM,Lower Sydenham Rail Station,TRUE,TRUE
+9100LTLHMPT,Littlehampton Rail Station,TRUE,TRUE
+9100LUDO,Llandudno Rail Station,TRUE,TRUE
+9100LUTOAPY,Luton Airport Parkway Rail Station,TRUE,TRUE
+9100LVRPLCH,Liverpool Central Rail Station,TRUE,TRUE
+9100LVRPLSH,Liverpool Lime Street Rail Station,TRUE,TRUE
+9100LVRPSPY,Liverpool South Parkway Rail Station,TRUE,TRUE
+9100LWBY,Langwathby Rail Station,TRUE,TRUE
+9100LYDNEY,Lydney Rail Station,TRUE,TRUE
+9100LYMPSTN,Lympstone Village Rail Station,TRUE,TRUE
+9100LYTHAM,Lytham Rail Station,TRUE,TRUE
+9100MACLSFD,Macclesfield Rail Station,TRUE,TRUE
+9100MAESTGW,Maesteg Rail Station,TRUE,TRUE
+9100MAGHULL,Maghull Rail Station,TRUE,TRUE
+9100MALTON,Malton Rail Station,TRUE,TRUE
+9100MARGATE,Margate Rail Station,TRUE,TRUE
+9100MARTON,Marton Rail Station,TRUE,TRUE
+9100MARYLBN,London Marylebone Rail Station,TRUE,TRUE
+9100MATLCKB,Matlock Bath Rail Station,TRUE,TRUE
+9100MATLOCK,Matlock Rail Station,TRUE,TRUE
+9100MAYBOLE,Maybole Rail Station,TRUE,TRUE
+9100MCKLFLD,Micklefield Rail Station,TRUE,TRUE
+9100MDLSBRO,Middlesbrough Rail Station,TRUE,TRUE
+9100MDNHEAD,Maidenhead Rail Station,TRUE,TRUE
+9100MEADWHL,Meadowhall Rail Station,TRUE,TRUE
+9100MELTON,Melton Rail Station,TRUE,TRUE
+9100MENSTON,Menston Rail Station,TRUE,TRUE
+9100MERTHYR,Merthyr Tydfil Rail Station,TRUE,TRUE
+9100MEXBRGH,Mexborough Rail Station,TRUE,TRUE
+9100MFLDTWN,Mansfield Rail Station,TRUE,TRUE
+9100MFLDWSE,Mansfield Woodhouse Rail Station,TRUE,TRUE
+9100MINMARS,Moreton-in-Marsh Rail Station,TRUE,TRUE
+9100MINSTER,Minster Rail Station,TRUE,TRUE
+9100MITCHMJ,Mitcham Junction Rail Station,TRUE,TRUE
+9100MKIN,Markinch Rail Station,TRUE,TRUE
+9100MKNSCEN,Milton Keynes Central Rail Station,TRUE,TRUE
+9100MLAIG,Mallaig Rail Station,TRUE,TRUE
+9100MLBRKB,Millbrook (Beds) Rail Station,TRUE,TRUE
+9100MLDTHRD,Mauldeth Road Rail Station,TRUE,TRUE
+9100MLFDHVN,Milford Haven Rail Station,TRUE,TRUE
+9100MLFORD,Milford (Surrey) Rail Station,TRUE,TRUE
+9100MLGV,Milngavie Rail Station,TRUE,TRUE
+9100MLLM,Millom Rail Station,TRUE,TRUE
+9100MNCRDGT,Deansgate Rail Station,TRUE,TRUE
+9100MNCRIAP,Manchester Airport Rail Station,TRUE,TRUE
+9100MNCRPIC,Manchester Piccadilly Rail Station,TRUE,TRUE
+9100MNCRVIC,Manchester Victoria Rail Station,TRUE,TRUE
+9100MNORBER,Manorbier Rail Station,TRUE,TRUE
+9100MOBERLY,Mobberley Rail Station,TRUE,TRUE
+9100MONTRSE,Montrose Rail Station,TRUE,TRUE
+9100MORCAME,Morecambe Rail Station,TRUE,TRUE
+9100MORETON,Moreton (Dorset) Rail Station,TRUE,TRUE
+9100MORTHRP,Moorthorpe Rail Station,TRUE,TRUE
+9100MOTHRWL,Motherwell Rail Station,TRUE,TRUE
+9100MOTNGHM,Mottingham Rail Station,TRUE,TRUE
+9100MPRT,Maryport Rail Station,TRUE,TRUE
+9100MRRYTON,Merryton Rail Station,TRUE,TRUE
+9100MRSK,Marske Rail Station,TRUE,TRUE
+9100MRSTNGR,Marston Green Rail Station,TRUE,TRUE
+9100MSGT,Moses Gate Rail Station,TRUE,TRUE
+9100MSSD,Moss Side Rail Station,TRUE,TRUE
+9100MSSPARK,Mosspark Rail Station,TRUE,TRUE
+9100MSTN,Moston Rail Station,TRUE,TRUE
+9100MSTONEE,Maidstone East Rail Station,TRUE,TRUE
+9100MTFL,Mount Florida Rail Station,TRUE,TRUE
+9100MUIREND,Muirend Rail Station,TRUE,TRUE
+9100MYTHLMR,Mytholmroyd Rail Station,TRUE,TRUE
+9100NABT,Newton Abbot Rail Station,TRUE,TRUE
+9100NAFERTN,Nafferton Rail Station,TRUE,TRUE
+9100NAVGTNR,Navigation Road Rail Station,TRUE,TRUE
+9100NBCKNHM,New Beckenham Rail Station,TRUE,TRUE
+9100NBERWCK,North Berwick Rail Station,TRUE,TRUE
+9100NBRWGE,Newbridge Rail Station,TRUE,TRUE
+9100NCRAGHA,Newcraighall Rail Station,TRUE,TRUE
+9100NEATH,Neath Rail Station,TRUE,TRUE
+9100NESTON,Neston Rail Station,TRUE,TRUE
+9100NETHRTN,Nethertown Rail Station,TRUE,TRUE
+9100NEWANG,Newark North Gate Rail Station,TRUE,TRUE
+9100NEWCLEE,New Clee Rail Station,TRUE,TRUE
+9100NEWHVNT,Newhaven Town Rail Station,TRUE,TRUE
+9100NEWLANE,New Lane Rail Station,TRUE,TRUE
+9100NHOL,New Holland Rail Station,TRUE,TRUE
+9100NLRTN,Northallerton Rail Station,TRUE,TRUE
+9100NLSN,Nelson Rail Station,TRUE,TRUE
+9100NMBRLPK,Northumberland Park Rail Station,TRUE,TRUE
+9100NMPTN,Northampton Rail Station,TRUE,TRUE
+9100NNTN,Nuneaton Rail Station,TRUE,TRUE
+9100NORBURY,Norbury Rail Station,TRUE,TRUE
+9100NORMNTN,Normanton Rail Station,TRUE,TRUE
+9100NPUD,New Pudsey Rail Station,TRUE,TRUE
+9100NRBERTH,Narberth Rail Station,TRUE,TRUE
+9100NRCH,Norwich Rail Station,TRUE,TRUE
+9100NRTF,Northfield Rail Station,TRUE,TRUE
+9100NTHCAMP,North Camp Rail Station,TRUE,TRUE
+9100NTHOLTP,Northolt Park Rail Station,TRUE,TRUE
+9100NTNG,Nottingham Rail Station,TRUE,TRUE
+9100NUNTHRP,Nunthorpe Rail Station,TRUE,TRUE
+9100NWALSHM,North Walsham Rail Station,TRUE,TRUE
+9100NWCSTLE,Newcastle Rail Station,TRUE,TRUE
+9100NWMILSN,New Mills Newtown Rail Station,TRUE,TRUE
+9100NWMKET,Newmarket Rail Station,TRUE,TRUE
+9100NWPTRTG,Newport (S. Wales) Rail Station,TRUE,TRUE
+9100NWRKCAS,Newark Castle Rail Station,TRUE,TRUE
+9100NWSTEAD,Newstead Rail Station,TRUE,TRUE
+9100NWTM,Newtonmore Rail Station,TRUE,TRUE
+9100OBAN,Oban Rail Station,TRUE,TRUE
+9100OLDROAN,Old Roan Rail Station,TRUE,TRUE
+9100OLTON,Olton Rail Station,TRUE,TRUE
+9100ORMSKRK,Ormskirk Rail Station,TRUE,TRUE
+9100ORPNGTN,Orpington Rail Station,TRUE,TRUE
+9100OTFORD,Otford Rail Station,TRUE,TRUE
+9100OULTNBN,Oulton Broad North Rail Station,TRUE,TRUE
+9100OULTNBS,Oulton Broad South Rail Station,TRUE,TRUE
+9100OUTWOOD,Outwood Rail Station,TRUE,TRUE
+9100OXENHLM,Oxenholme Lake District Rail Station,TRUE,TRUE
+9100OXFD,Oxford Rail Station,TRUE,TRUE
+9100OXTED,Oxted Rail Station,TRUE,TRUE
+9100PADGATE,Padgate Rail Station,TRUE,TRUE
+9100PADTON,London Paddington Rail Station,TRUE,TRUE
+9100PAIGNTN,Paignton Rail Station,TRUE,TRUE
+9100PARBOLD,Parbold Rail Station,TRUE,TRUE
+9100PARR,Par Rail Station,TRUE,TRUE
+9100PBRO,Peterborough Rail Station,TRUE,TRUE
+9100PBRT,Pemberton Rail Station,TRUE,TRUE
+9100PEGSWD,Pegswood Rail Station,TRUE,TRUE
+9100PEMBRKD,Pembroke Dock Rail Station,TRUE,TRUE
+9100PEMBROK,Pembroke Rail Station,TRUE,TRUE
+9100PENARTH,Penarth Rail Station,TRUE,TRUE
+9100PENCOED,Pencoed Rail Station,TRUE,TRUE
+9100PENISTN,Penistone Rail Station,TRUE,TRUE
+9100PENMERE,Penmere Rail Station,TRUE,TRUE
+9100PENYCHN,Penychain Rail Station,TRUE,TRUE
+9100PENZNCE,Penzance Rail Station,TRUE,TRUE
+9100PERANWL,Perranwell Rail Station,TRUE,TRUE
+9100PERSHOR,Pershore Rail Station,TRUE,TRUE
+9100PHBR,Portsmouth Harbour Rail Station,TRUE,TRUE
+9100PINHOE,Pinhoe Rail Station,TRUE,TRUE
+9100PITSEA,Pitsea Rail Station,TRUE,TRUE
+9100PKST,Park Street Rail Station,TRUE,TRUE
+9100PKWD,Paddock Wood Rail Station,TRUE,TRUE
+9100PLSNGTN,Pleasington Rail Station,TRUE,TRUE
+9100PLTNLFY,Poulton-Le-Fylde Rail Station,TRUE,TRUE
+9100PLUMLEY,Plumley Rail Station,TRUE,TRUE
+9100PLYMTH,Plymouth Rail Station,TRUE,TRUE
+9100PMBRYBP,Pembrey & Burry Port Rail Station,TRUE,TRUE
+9100PNALLY,Penally Rail Station,TRUE,TRUE
+9100PNDRSEN,Ponders End Rail Station,TRUE,TRUE
+9100PNGEE,Penge East Rail Station,TRUE,TRUE
+9100PNKRDG,Penkridge Rail Station,TRUE,TRUE
+9100PNRHCBR,Penrhiwceiber Rail Station,TRUE,TRUE
+9100PNTH,Penrith Rail Station,TRUE,TRUE
+9100PNTLTYN,Pontlottyn Rail Station,TRUE,TRUE
+9100PNTYFYN,Pantyffynnon Rail Station,TRUE,TRUE
+9100POLGATE,Polegate Rail Station,TRUE,TRUE
+9100PONYCLN,Pontyclun Rail Station,TRUE,TRUE
+9100POOLE,Poole Rail Station,TRUE,TRUE
+9100POPLTON,Poppleton Rail Station,TRUE,TRUE
+9100PORH,Porth Rail Station,TRUE,TRUE
+9100POYNTON,Poynton Rail Station,TRUE,TRUE
+9100PRESCOT,Prescot Rail Station,TRUE,TRUE
+9100PRINRIS,Princes Risborough Rail Station,TRUE,TRUE
+9100PRKSTON,Harwich International Rail Station,TRUE,TRUE
+9100PRST,Preston Rail Station,TRUE,TRUE
+9100PRUDHOE,Prudhoe Rail Station,TRUE,TRUE
+9100PRYN,Penryn Rail Station,TRUE,TRUE
+9100PSEA,Portsmouth & Southsea Rail Station,TRUE,TRUE
+9100PSLDAWH,Portslade Rail Station,TRUE,TRUE
+9100PSLYCAN,Paisley Canal Rail Station,TRUE,TRUE
+9100PSLYGST,Paisley Gilmour Street Rail Station,TRUE,TRUE
+9100PSTA,Prestatyn Rail Station,TRUE,TRUE
+9100PTCK,Partick Rail Station,TRUE,TRUE
+9100PTFTBHL,Pontefract Baghill Rail Station,TRUE,TRUE
+9100PTFTTSF,Pontefract Tanshelf Rail Station,TRUE,TRUE
+9100PTRSFLD,Petersfield Rail Station,TRUE,TRUE
+9100PURFLET,Purfleet Rail Station,TRUE,TRUE
+9100PURLEY,Purley Rail Station,TRUE,TRUE
+9100PVNSYAW,Pevensey & Westham Rail Station,TRUE,TRUE
+9100PWCKAPT,Prestwick International Rail Station,TRUE,TRUE
+9100PWLHELI,Pwllheli Rail Station,TRUE,TRUE
+9100PWTH,Polesworth Rail Station,TRUE,TRUE
+9100PYBONT,Pen-Y-Bont Rail Station,TRUE,TRUE
+9100PYLE,Pyle Rail Station,TRUE,TRUE
+9100QUENBRO,Queenborough Rail Station,TRUE,TRUE
+9100RAMSGTE,Ramsgate Rail Station,TRUE,TRUE
+9100RAUCEBY,Rauceby Rail Station,TRUE,TRUE
+9100RAWCLIF,Rawcliffe Rail Station,TRUE,TRUE
+9100RBRTSBD,Robertsbridge Rail Station,TRUE,TRUE
+9100RCHDALE,Rochdale Rail Station,TRUE,TRUE
+9100RCHT,Rochester Rail Station,TRUE,TRUE
+9100RDIT,Redditch Rail Station,TRUE,TRUE
+9100RDLSDWN,Riddlesdown Rail Station,TRUE,TRUE
+9100RDNGSTN,Reading Rail Station,TRUE,TRUE
+9100REDCARC,Redcar Central Rail Station,TRUE,TRUE
+9100REDCARE,Redcar East Rail Station,TRUE,TRUE
+9100REDHILL,Redhill Rail Station,TRUE,TRUE
+9100REDLAND,Redland Rail Station,TRUE,TRUE
+9100REDRUTH,Redruth Rail Station,TRUE,TRUE
+9100REIGATE,Reigate Rail Station,TRUE,TRUE
+9100RENTON,Renton Rail Station,TRUE,TRUE
+9100RGLS,Ravenglass For Eskdale Rail Station,TRUE,TRUE
+9100RHIL,Rainhill Rail Station,TRUE,TRUE
+9100RHOOSE,Rhoose Cardiff International Airport Rail Station,TRUE,TRUE
+9100RHYL,Rhyl Rail Station,TRUE,TRUE
+9100RHYMNEY,Rhymney Rail Station,TRUE,TRUE
+9100RIBLHED,Ribblehead Rail Station,TRUE,TRUE
+9100RICHMND,Richmond Rail Station,TRUE,TRUE
+9100RIDGMNT,Ridgmont Rail Station,TRUE,TRUE
+9100RIDNGML,Riding Mill Rail Station,TRUE,TRUE
+9100RISCA,Risca & Pontymister Rail Station,TRUE,TRUE
+9100RNFD,Rainford Rail Station,TRUE,TRUE
+9100RNHAME,Rainham (Essex) Rail Station,TRUE,TRUE
+9100ROBY,Roby Rail Station,TRUE,TRUE
+9100ROGRSTN,Rogerstone Rail Station,TRUE,TRUE
+9100ROHL,Rose Hill  Rail Station,TRUE,TRUE
+9100ROMFORD,Romford Rail Station,TRUE,TRUE
+9100ROOSE,Roose Rail Station,TRUE,TRUE
+9100ROTHCEN,Rotherham Central Rail Station,TRUE,TRUE
+9100ROYDON,Roydon Rail Station,TRUE,TRUE
+9100RTFD,Retford Rail Station,TRUE,TRUE
+9100RTHGLEN,Rutherglen Rail Station,TRUE,TRUE
+9100RUFDORD,Rufford Rail Station,TRUE,TRUE
+9100RUGBY,Rugby Rail Station,TRUE,TRUE
+9100RUNCORN,Runcorn Rail Station,TRUE,TRUE
+9100RUNCRNE,Runcorn East Rail Station,TRUE,TRUE
+9100RUSWARP,Ruswarp Rail Station,TRUE,TRUE
+9100RYDE,Ryde Esplanade Rail Station,TRUE,TRUE
+9100RYDP,Ryde Pier Head Rail Station,TRUE,TRUE
+9100RYDRBRW,Ryder Brow Rail Station,TRUE,TRUE
+9100RYEE,Rye Rail Station,TRUE,TRUE
+9100SABR,Sandal & Agbrigg Rail Station,TRUE,TRUE
+9100SACTON,South Acton Rail Station,TRUE,TRUE
+9100SAIR,Saltaire Rail Station,TRUE,TRUE
+9100SANKEY,Sankey For Penketh Rail Station,TRUE,TRUE
+9100SBDGWTH,Sawbridgeworth Rail Station,TRUE,TRUE
+9100SBRN,Saltburn Rail Station,TRUE,TRUE
+9100SBROUGH,Stallingborough Rail Station,TRUE,TRUE
+9100SBYD,Stalybridge Rail Station,TRUE,TRUE
+9100SCARBRO,Scarborough Rail Station,TRUE,TRUE
+9100SCNTHRP,Scunthorpe Rail Station,TRUE,TRUE
+9100SDAL,Silverdale Rail Station,TRUE,TRUE
+9100SDLG,Sandling Rail Station,TRUE,TRUE
+9100SDON,Swindon Rail Station,TRUE,TRUE
+9100SDRSFOT,Saundersfoot Rail Station,TRUE,TRUE
+9100SEAFORD,Seaford Rail Station,TRUE,TRUE
+9100SEAHAM,Seaham Rail Station,TRUE,TRUE
+9100SEASCAL,Seascale Rail Station,TRUE,TRUE
+9100SEERGRN,Seer Green Rail Station,TRUE,TRUE
+9100SELMSAL,South Elmsall Rail Station,TRUE,TRUE
+9100SELYOAK,Selly Oak Rail Station,TRUE,TRUE
+9100SETNCRW,Seaton Carew Rail Station,TRUE,TRUE
+9100SETTLE,Settle Rail Station,TRUE,TRUE
+9100SHAMPTN,Shirehampton Rail Station,TRUE,TRUE
+9100SHANKLN,Shanklin Rail Station,TRUE,TRUE
+9100SHBN,Sherburn-In-Elmet Rail Station,TRUE,TRUE
+9100SHBRYNS,Shoeburyness Rail Station,TRUE,TRUE
+9100SHDN,Shildon Rail Station,TRUE,TRUE
+9100SHEFFLD,Sheffield Rail Station,TRUE,TRUE
+9100SHELFD,Shelford Rail Station,TRUE,TRUE
+9100SHENFLD,Shenfield Rail Station,TRUE,TRUE
+9100SHEPRTN,Shepperton Rail Station,TRUE,TRUE
+9100SHERBRN,Sherborne Rail Station,TRUE,TRUE
+9100SHILDMR,Shieldmuir Rail Station,TRUE,TRUE
+9100SHPDSB,Shepherd'S Bush Rail Station,TRUE,TRUE
+9100SHPLAKE,Shiplake Rail Station,TRUE,TRUE
+9100SHPY,Shipley Rail Station,TRUE,TRUE
+9100SHRBROK,Shirebrook Rail Station,TRUE,TRUE
+9100SHRDHST,Shoreditch High Street Rail Station,TRUE,TRUE
+9100SHRGHAM,Sheringham Rail Station,TRUE,TRUE
+9100SHRHMBS,Shoreham-By-Sea Rail Station,TRUE,TRUE
+9100SHRKSKS,Shireoaks Rail Station,TRUE,TRUE
+9100SHRNSOS,Sheerness-On-Sea Rail Station,TRUE,TRUE
+9100SHRWBY,Shrewsbury Rail Station,TRUE,TRUE
+9100SILCRFT,Silecroft Rail Station,TRUE,TRUE
+9100SKEGNES,Skegness Rail Station,TRUE,TRUE
+9100SKEWEN,Skewen Rail Station,TRUE,TRUE
+9100SKPT,Skipton Rail Station,TRUE,TRUE
+9100SKSCMN,Silkstone Common Rail Station,TRUE,TRUE
+9100SLADEGN,Slade Green Rail Station,TRUE,TRUE
+9100SLEGHTS,Sleights Rail Station,TRUE,TRUE
+9100SLEHOPE,Stanford-Le-Hope Rail Station,TRUE,TRUE
+9100SLFDORD,Salford Central Rail Station,TRUE,TRUE
+9100SLOUGH,Slough Rail Station,TRUE,TRUE
+9100SLSBRY,Salisbury Rail Station,TRUE,TRUE
+9100SLTHWTE,Slaithwaite Rail Station,TRUE,TRUE
+9100SLTMRSH,Saltmarshe Rail Station,TRUE,TRUE
+9100SMARGRT,St Margarets (Herts) Rail Station,TRUE,TRUE
+9100SMBG,Smithy Bridge Rail Station,TRUE,TRUE
+9100SMILFD,South Milford Rail Station,TRUE,TRUE
+9100SNAITH,Snaith Rail Station,TRUE,TRUE
+9100SNDRLND,Sunderland Rail Station,TRUE,TRUE
+9100SNDWDUD,Sandwell & Dudley Rail Station,TRUE,TRUE
+9100SNDY,Sandy Rail Station,TRUE,TRUE
+9100SNODLND,Snodland Rail Station,TRUE,TRUE
+9100SOLIHUL,Solihull Rail Station,TRUE,TRUE
+9100SOTON,Southampton Central Rail Station,TRUE,TRUE
+9100SOTPKWY,Southampton Airport Parkway Rail Station,TRUE,TRUE
+9100SOUTHPT,Southport Rail Station,TRUE,TRUE
+9100SPHS,Staplehurst Rail Station,TRUE,TRUE
+9100STAFFRD,Stafford Rail Station,TRUE,TRUE
+9100STAINES,Staines Rail Station,TRUE,TRUE
+9100STALBCY,St Albans Rail Station,TRUE,TRUE
+9100STALBNA,St Albans Abbey Rail Station,TRUE,TRUE
+9100STANAIR,Stansted Airport Rail Station,TRUE,TRUE
+9100STARBCK,Starbeck Rail Station,TRUE,TRUE
+9100STAS,St Annes-On-The-Sea Rail Station,TRUE,TRUE
+9100STBEES,St Bees Rail Station,TRUE,TRUE
+9100STCKSFL,Stocksfield Rail Station,TRUE,TRUE
+9100STCLMBR,St Columb Road Rail Station,TRUE,TRUE
+9100STEETON,Steeton & Silsden Rail Station,TRUE,TRUE
+9100STEVNGE,Stevenage Rail Station,TRUE,TRUE
+9100STEWRTN,Stewarton Rail Station,TRUE,TRUE
+9100STFD,Stratford Rail Station,TRUE,TRUE
+9100STFODOM,Stratford International Station Rail Station,TRUE,TRUE
+9100STHCENT,Southend Central Rail Station,TRUE,TRUE
+9100STHEAIR,Southend Airport Rail Station,TRUE,TRUE
+9100STHLNSC,St Helens Central Rail Station,TRUE,TRUE
+9100STHLNSJ,St Helens Junction Rail Station,TRUE,TRUE
+9100STHS,Streethouse Rail Station,TRUE,TRUE
+9100STHVIC,Southend Victoria Rail Station,TRUE,TRUE
+9100STIVES,St Ives (Cornwall) Rail Station,TRUE,TRUE
+9100STKEYNE,St Keyne Rail Station,TRUE,TRUE
+9100STKM,Stoke Mandeville Rail Station,TRUE,TRUE
+9100STKP,Stockport Rail Station,TRUE,TRUE
+9100STKSMR,Stocksmoor Rail Station,TRUE,TRUE
+9100STLNRWS,St Leonards Warrior Square Rail Station,TRUE,TRUE
+9100STNGBRN,Sittingbourne Rail Station,TRUE,TRUE
+9100STOCTON,Stockton Rail Station,TRUE,TRUE
+9100STOKEOT,Stoke-On-Trent Rail Station,TRUE,TRUE
+9100STPX,London St Pancras International Rail Station,TRUE,TRUE
+9100STRBDGJ,Stourbridge Junction Rail Station,TRUE,TRUE
+9100STRBDGT,Stourbridge Town Rail Station,TRUE,TRUE
+9100STRHCOM,Streatham Common Rail Station,TRUE,TRUE
+9100STRHILL,Streatham Hill Rail Station,TRUE,TRUE
+9100STRINES,Strines Rail Station,TRUE,TRUE
+9100STRMFRY,Stromeferry Rail Station,TRUE,TRUE
+9100STRNRR,Stranraer Rail Station,TRUE,TRUE
+9100STRWBYH,Strawberry Hill Rail Station,TRUE,TRUE
+9100STURRY,Sturry Rail Station,TRUE,TRUE
+9100STWMRKT,Stowmarket Rail Station,TRUE,TRUE
+9100STWRTBY,Stewartby Rail Station,TRUE,TRUE
+9100STYAL,Styal Rail Station,TRUE,TRUE
+9100SUNNGDL,Sunningdale Rail Station,TRUE,TRUE
+9100SURBITN,Surbiton Rail Station,TRUE,TRUE
+9100SUTCO,Sutton Coldfield Rail Station,TRUE,TRUE
+9100SUTTON,Sutton (Surrey) Rail Station,TRUE,TRUE
+9100SVNOAKS,Sevenoaks Rail Station,TRUE,TRUE
+9100SWALE,Swale Rail Station,TRUE,TRUE
+9100SWANSEA,Swansea Rail Station,TRUE,TRUE
+9100SWCH,Sandwich Rail Station,TRUE,TRUE
+9100SWELL,Shepherds Well Rail Station,TRUE,TRUE
+9100SWINTN,Swinton (South Yorks) Rail Station,TRUE,TRUE
+9100SWLY,Swanley Rail Station,TRUE,TRUE
+9100SWRBBDG,Sowerby Bridge Rail Station,TRUE,TRUE
+9100SXMNDHM,Saxmundham Rail Station,TRUE,TRUE
+9100SYDENHM,Sydenham Rail Station,TRUE,TRUE
+9100SYSTON,Syston Rail Station,TRUE,TRUE
+9100TABY,Thornaby Rail Station,TRUE,TRUE
+9100TAFFSWL,Taffs Well Rail Station,TRUE,TRUE
+9100TALB,Talybont Rail Station,TRUE,TRUE
+9100TATNHMC,Tattenham Corner Rail Station,TRUE,TRUE
+9100TAUNTON,Taunton Rail Station,TRUE,TRUE
+9100TELFRDC,Telford Central Rail Station,TRUE,TRUE
+9100TEYNHAM,Teynham Rail Station,TRUE,TRUE
+9100THABBEY,Thornton Abbey Rail Station,TRUE,TRUE
+9100THAL,Thorntonhall Rail Station,TRUE,TRUE
+9100THBDGS,Three Bridges Rail Station,TRUE,TRUE
+9100THHT,Thatto Heath Rail Station,TRUE,TRUE
+9100THIRSK,Thirsk Rail Station,TRUE,TRUE
+9100THOPBAY,Thorpe Bay Rail Station,TRUE,TRUE
+9100THORNES,Thorne South Rail Station,TRUE,TRUE
+9100THURSO,Thurso Rail Station,TRUE,TRUE
+9100TILEH,Tile Hill Rail Station,TRUE,TRUE
+9100TIPTON,Tipton Rail Station,TRUE,TRUE
+9100TISBURY,Tisbury Rail Station,TRUE,TRUE
+9100TIVIPW,Tiverton Parkway Rail Station,TRUE,TRUE
+9100TLBYTWN,Tilbury Town Rail Station,TRUE,TRUE
+9100TMPCMB,Templecombe Rail Station,TRUE,TRUE
+9100TMWTHLL,Tamworth Rail Station,TRUE,TRUE
+9100TONBDG,Tonbridge Rail Station,TRUE,TRUE
+9100TONDU,Tondu Rail Station,TRUE,TRUE
+9100TONPNTR,Ton Pentre Rail Station,TRUE,TRUE
+9100TOPSHAM,Topsham Rail Station,TRUE,TRUE
+9100TREORCY,Treorchy Rail Station,TRUE,TRUE
+9100TRFDPK,Trafford Park Rail Station,TRUE,TRUE
+9100TRIMLEY,Trimley Rail Station,TRUE,TRUE
+9100TRNO,Thurnscoe Rail Station,TRUE,TRUE
+9100TRURO,Truro Rail Station,TRUE,TRUE
+9100TUNWELL,Tunbridge Wells Rail Station,TRUE,TRUE
+9100TUTBURY,Tutbury & Hatton Rail Station,TRUE,TRUE
+9100TWCKNHM,Twickenham Rail Station,TRUE,TRUE
+9100TWYFORD,Twyford Rail Station,TRUE,TRUE
+9100TYGLAS,Ty Glas Rail Station,TRUE,TRUE
+9100TYNDRML,Tyndrum Lower Rail Station,TRUE,TRUE
+9100UCKFILD,Uckfield Rail Station,TRUE,TRUE
+9100ULCEBY,Ulceby Rail Station,TRUE,TRUE
+9100ULESKLF,Ulleskelf Rail Station,TRUE,TRUE
+9100ULVRSTN,Ulverston Rail Station,TRUE,TRUE
+9100UMBRLGH,Umberleigh Rail Station,TRUE,TRUE
+9100UNVRSYB,University Rail Station,TRUE,TRUE
+9100UPMNSTR,Upminster Rail Station,TRUE,TRUE
+9100UPRHLWY,Upper Holloway Rail Station,TRUE,TRUE
+9100URMSTON,Urmston Rail Station,TRUE,TRUE
+9100VALLEY,Valley Rail Station,TRUE,TRUE
+9100VAUXHLM,Vauxhall Rail Station,TRUE,TRUE
+9100VICTRIC,London Victoria Rail Station,TRUE,TRUE
+9100WAINFLT,Wainfleet Rail Station,TRUE,TRUE
+9100WALMER,Walmer Rail Station,TRUE,TRUE
+9100WALNGTN,Wallington Rail Station,TRUE,TRUE
+9100WALSALL,Walsall Rail Station,TRUE,TRUE
+9100WARE,Ware Rail Station,TRUE,TRUE
+9100WARGRAV,Wargrave Rail Station,TRUE,TRUE
+9100WARHAM,Wareham Rail Station,TRUE,TRUE
+9100WARWPWY,Warwick Parkway Rail Station,TRUE,TRUE
+9100WATFDJ,Watford Junction Rail Station,TRUE,TRUE
+9100WATFDN,Watford North Rail Station,TRUE,TRUE
+9100WATRLMN,London Waterloo Main Rail Station,TRUE,TRUE
+9100WATSTND,Whatstandwell Rail Station,TRUE,TRUE
+9100WBYFLET,West Byfleet Rail Station,TRUE,TRUE
+9100WCKHMMR,Wickham Market Rail Station,TRUE,TRUE
+9100WCLIFF,Westcliff Rail Station,TRUE,TRUE
+9100WCOMBEP,Westcombe Park Rail Station,TRUE,TRUE
+9100WCROYDN,West Croydon Rail Station,TRUE,TRUE
+9100WDEN,Walsden Rail Station,TRUE,TRUE
+9100WDHOUSE,Woodhouse Rail Station,TRUE,TRUE
+9100WDLESFD,Woodlesford Rail Station,TRUE,TRUE
+9100WDNYMNR,Widney Manor Rail Station,TRUE,TRUE
+9100WDON,Wimbledon Rail Station,TRUE,TRUE
+9100WDRNGTN,Widdrington Rail Station,TRUE,TRUE
+9100WELLING,Welling Rail Station,TRUE,TRUE
+9100WELNGTN,Wellington (Shropshire) Rail Station,TRUE,TRUE
+9100WELSHPL,Welshpool Rail Station,TRUE,TRUE
+9100WEMYSSB,Wemyss Bay Rail Station,TRUE,TRUE
+9100WENDOVR,Wendover Rail Station,TRUE,TRUE
+9100WETHERL,Wetheral Rail Station,TRUE,TRUE
+9100WEYBDGE,Weybridge Rail Station,TRUE,TRUE
+9100WEYMTH,Weymouth Rail Station,TRUE,TRUE
+9100WGSTS,South Wigston Rail Station,TRUE,TRUE
+9100WHALYBG,Whaley Bridge Rail Station,TRUE,TRUE
+9100WHCH,Whitchurch (Cardiff) Rail Station,TRUE,TRUE
+9100WHIMPLE,Whimple Rail Station,TRUE,TRUE
+9100WHINH,Whinhill Rail Station,TRUE,TRUE
+9100WHISTON,Whiston Rail Station,TRUE,TRUE
+9100WHITHVN,Whitehaven Rail Station,TRUE,TRUE
+9100WHLAND,Whitland Rail Station,TRUE,TRUE
+9100WHLE,Whitlocks End Rail Station,TRUE,TRUE
+9100WHMPSTM,West Hampstead Thameslink Rail Station,TRUE,TRUE
+9100WHSTBLE,Whitstable Rail Station,TRUE,TRUE
+9100WHTBDGE,Whitley Bridge Rail Station,TRUE,TRUE
+9100WHWLL,Whitwell Rail Station,TRUE,TRUE
+9100WICK,Wick Rail Station,TRUE,TRUE
+9100WIDNES,Widnes Rail Station,TRUE,TRUE
+9100WIGANNW,Wigan North Western Rail Station,TRUE,TRUE
+9100WIGANWL,Wigan Wallgate Rail Station,TRUE,TRUE
+9100WIGTON,Wigton Rail Station,TRUE,TRUE
+9100WINDSEC,Windsor & Eton Central Rail Station,TRUE,TRUE
+9100WINERSH,Winnersh Rail Station,TRUE,TRUE
+9100WITHAME,Witham Rail Station,TRUE,TRUE
+9100WKFLDKG,Wakefield Kirkgate Rail Station,TRUE,TRUE
+9100WKFLDWG,Wakefield Westgate Rail Station,TRUE,TRUE
+9100WKILBRD,West Kilbride Rail Station,TRUE,TRUE
+9100WLDMILL,Wildmill Rail Station,TRUE,TRUE
+9100WLMSL,Wilmslow Rail Station,TRUE,TRUE
+9100WLNGBRO,Wellingborough Rail Station,TRUE,TRUE
+9100WLOE,London Waterloo East Rail Station,TRUE,TRUE
+9100WLSDJHL,Willesden Junction Rail Station,TRUE,TRUE
+9100WLTHQRD,Walthamstow Queens Road Rail Station,TRUE,TRUE
+9100WLTWCEN,Walthamstow Central Rail Station,TRUE,TRUE
+9100WLWYNGC,Welwyn Garden City Rail Station,TRUE,TRUE
+9100WMALING,West Malling Rail Station,TRUE,TRUE
+9100WMBY,Wembley Central Rail Station,TRUE,TRUE
+9100WMER,Windermere Rail Station,TRUE,TRUE
+9100WNORWOD,West Norwood Rail Station,TRUE,TRUE
+9100WNSFD,Winsford Rail Station,TRUE,TRUE
+9100WOBURNS,Woburn Sands Rail Station,TRUE,TRUE
+9100WODBDGE,Woodbridge Rail Station,TRUE,TRUE
+9100WOKING,Woking Rail Station,TRUE,TRUE
+9100WOKNGHM,Wokingham Rail Station,TRUE,TRUE
+9100WOLWCHA,Woolwich Arsenal Rail Station,TRUE,TRUE
+9100WOMBWEL,Wombwell Rail Station,TRUE,TRUE
+9100WORCSFS,Worcester Foregate Street Rail Station,TRUE,TRUE
+9100WORKSOP,Worksop Rail Station,TRUE,TRUE
+9100WORSTED,Worstead Rail Station,TRUE,TRUE
+9100WORTHNG,Worthing Rail Station,TRUE,TRUE
+9100WRESSLE,Wressle Rail Station,TRUE,TRUE
+9100WREXHMC,Wrexham Central Rail Station,TRUE,TRUE
+9100WREXHMG,Wrexham General Rail Station,TRUE,TRUE
+9100WRGT,Warrington Central Rail Station,TRUE,TRUE
+9100WRGTNBQ,Warrington Bank Quay Rail Station,TRUE,TRUE
+9100WROXHAM,Hoveton & Wroxham Rail Station,TRUE,TRUE
+9100WRUNTON,West Runton Rail Station,TRUE,TRUE
+9100WSMARE,Weston-Super-Mare Rail Station,TRUE,TRUE
+9100WSORAER,Windsor & Eton Riverside Rail Station,TRUE,TRUE
+9100WSTBRYW,Westbury (Wilts) Rail Station,TRUE,TRUE
+9100WSTRFLD,Westerfield Rail Station,TRUE,TRUE
+9100WTBY,Whitby Rail Station,TRUE,TRUE
+9100WVRMPTN,Wolverhampton Rail Station,TRUE,TRUE
+9100WVRTTEC,Wavertree Technology Park Rail Station,TRUE,TRUE
+9100WWICKHM,West Wickham Rail Station,TRUE,TRUE
+9100WWRTHNG,West Worthing Rail Station,TRUE,TRUE
+9100WYEE,Wye Rail Station,TRUE,TRUE
+9100WYLAM,Wylam Rail Station,TRUE,TRUE
+9100YARMTH,Great Yarmouth Rail Station,TRUE,TRUE
+9100YEOFORD,Yeoford Rail Station,TRUE,TRUE
+9100YNYSWEN,Ynyswen Rail Station,TRUE,TRUE
+9100YORK,York Rail Station,TRUE,TRUE
+9100YOVILJN,Yeovil Junction Rail Station,TRUE,TRUE
+9100YOVILPM,Yeovil Pen Mill Rail Station,TRUE,TRUE
+9100YRDLYWD,Yardley Wood Rail Station,TRUE,TRUE

@@ -163,7 +163,7 @@ function drawAll()
 function drawStats()
 {
   $('#gen-stats').append("<p>Total journeys: " + totalJourneys + "</p>");
-  $('#gen-stats').append("<p>Total unique stations vistied: " + totalVisitedStationCodes + "/" + totalNatRailStations + " (" + percentStationsVisited + ")</p>");
+  $('#gen-stats').append("<p>Total unique stations vistied: " + totalVisitedStationCodes + " / " + totalNatRailStations + " (" + percentStationsVisited + ")</p>");
   $('#gen-stats').append("<p>Total days spent traveling: " + totalDaysTraveled + " / 365 (" + percentDaysTraveled + ")</p>");
   $('#gen-stats').append("<p>Most rail journeys in one day: " + maxJourneyPerDay + "</p>");
 
