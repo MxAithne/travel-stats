@@ -14,6 +14,7 @@
     <script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
     <script src="https://d3js.org/d3-scale.v0.7.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
+    <script src="https://wzrd.in/standalone/ospoint@latest"></script>
     <script src="./drawgraphs.js"></script>
   </head>
 
@@ -40,10 +41,11 @@
         <div id="station-dep"></div>
         <div id="station-ari"></div>
 
-        <div id="dep-arr" class="invisible">
+        <div id="dep-arr" style="display:none;">
           <p><span class="origin">Departures</span> and <span class="dest">Arrivals</span>:</p>
           <div id="travel-graph"></div>
         </div>
+        <div id="toggle"><a href="#" onClick="$( '#dep-arr' ).toggle(); return false;">Show / Hide Arrival and Departure Data</a></div>
 
         <h4>Journeys by train class:</h4>
         <div id="class-graph"></div>

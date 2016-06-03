@@ -104,6 +104,8 @@ function genDataFromCSV(csv, lookupCsv)
       {
         totalVisitedAccessStations++;
       }
+
+      stationSummary[lookupCsv[i].CrsCode].location = (new ospoint(lookupCsv[i].Northing, lookupCsv[i].Easting)).toETRS89();
     }
   }
 
@@ -313,7 +315,8 @@ function drawBarChart()
 		.attr("y", barHeight * 0.5)
 		.attr("dy", ".35em")
 		.attr("class", "stationCode")
-		.text(function(d) { return d.code; });
+		.text(function(d) { return d.code; })
+    .append("title").text(function(d) { return d.name; });
 
   bar.append("line")
     .attr("x1", xoffset)
@@ -526,4 +529,68 @@ function drawChordDia(labelData, matrixData) {
           && p.target.index != i;
     });
   }
+}
+
+function loadMap()
+{
+  d3.csv("./travel-data.csv", function(csv)
+  {
+    d3.csv("./station-codes.csv", function (lookupCsv) 
+    {
+      genDataFromCSV(csv, lookupCsv);
+      drawMap();
+    });
+  });
+}
+
+function drawMap()
+{
+  var width = 960,
+    height = 1160;
+
+  var projection = d3.geo.albers()
+    .center([0, 55.4])
+    .rotate([4.4, 0])
+    .parallels([50, 60])
+    .scale(6000)
+    .translate([width / 2, height / 2]);
+  
+  var path = d3.geo.path()
+    .projection(projection);
+  
+  var svg = d3.select("#ukmap").append("svg")
+    .attr("width", width)
+    .attr("height", height)
+    .attr("shape-rendering", "geometricPrecision");
+
+  var colours = d3.scale.category20()
+    .domain(objListStations.map(function (d) { return d.code; } ));
+
+  d3.json("uk.json", function(error, uk) 
+  {
+    if (error) return console.error(error);
+
+    // external boundaries (coastlines)
+    svg.append("path")
+      .datum(topojson.mesh(uk, uk.objects.subunits, function(a, b) { return a === b; }))
+      .attr("d", path)
+      .attr("class", "map-outline");
+
+    // internal boundaries (borders)
+    svg.append("path")
+      .datum(topojson.mesh(uk, uk.objects.subunits, function(a, b) { return a !== b; }))
+      .attr("d", path)
+      .attr("class", "map-borders");
+
+    svg.selectAll(".station-dot")
+      .data(objListStations)
+      .enter().append("circle")
+        .attr("r", 5)
+        .attr("transform",  function(d) { return "translate(" + projection([d.location.longitude, d.location.latitude]) + ")"; })
+        .attr("class", "station-dot")
+        .attr("style", function (d) { return "fill:" + colours(d.code); } )
+        .append("title").text(function(d) { return d.name; });;
+
+  });
+
 }

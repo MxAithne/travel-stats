@@ -63,12 +63,14 @@ text.stationCode {
 
 /* The chord chart */
 
-#circle circle {
+#circle circle 
+{
   fill: lightgray;
   pointer-events: all;
 }
 
-.group path {
+.group path 
+{
   fill-opacity: .5;
 }
 
@@ -77,6 +79,28 @@ path.chord {
   stroke-width: .25px;
 }
 
-#circle:hover path.fade {
+#circle:hover path.fade 
+{
   display: none;
+}
+
+.map-outline
+{
+  stroke: blue;
+  stroke-width: 2px;
+}
+
+.map-borders
+{
+  stroke: darkblue;
+  stroke-width: 2px;
+  stroke-dasharray: 2,2;
+  stroke-linejoin: round;
+}
+
+.station-dot
+{
+  /* fill: blue; */
+  opacity: 0.75;
+  stroke: whitesmoke;
 }
