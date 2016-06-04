@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>MxAithne's Travel Stats</title>
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
+    <script src="https://d3js.org/d3.v3.min.js" charset="utf-8"></script>
     <script src="https://d3js.org/d3-array.v0.7.min.js"></script>
     <script src="https://d3js.org/d3-collection.v0.2.min.js"></script>
     <script src="https://d3js.org/d3-color.v0.4.min.js"></script>
@@ -13,6 +13,7 @@
     <script src="https://d3js.org/d3-time.v0.2.min.js"></script>
     <script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
     <script src="https://d3js.org/d3-scale.v0.7.min.js"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-rc1/jquery.min.js"></script>
     <script src="https://wzrd.in/standalone/ospoint@latest"></script>
     <script src="./drawgraphs.js"></script>
@@ -33,8 +34,14 @@
         <h4>Journeys per day:</h4>
         <div id="calheat"></div>
         
-        <h4>Connections:</h4>
+        <h4>Routes and Connections:</h4>
         <div id="chord-diagram"></div>
+        
+        <div id="map-hide" style="display:none;">
+          <p>Station location map:</p>
+          <div id="ukmap"></div>
+        </div>
+        <div id="toggle-map"><a href="#" onClick="$( '#map-hide' ).toggle(); return false;">Show / Hide Location Map</a></div>
       
         <h4>Stations:</h4>
         <div id="station-graph"></div>

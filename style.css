@@ -104,3 +104,10 @@ path.chord {
   opacity: 0.75;
   stroke: whitesmoke;
 }
+
+.route-path
+{
+  stroke: lightblue;
+  stroke-width: 1px;
+  stroke-dasharray: 2,2,1,2;
+}

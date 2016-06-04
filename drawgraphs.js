@@ -18,17 +18,20 @@ var percentVisitedAccessStations = 0;
 var maxJourneysInDay = 0; // The most rail journey that I have done in one day
 var maxJourneysDate = 0; // The date of the most recient day that I did the most rail journeys in
 
-var stationSummary = {};
-
 var journeysPerDay = [];
 var journeysByClass = []; 
 
-var gridJourneys = [];
+var gridPctJourneys = [];
+var gridCntJourneys = [];
 
 // These must be of type list [] for the system to work
+var listRoutesTraveled = [];
 var listVisitedStationCodes = []; // A unique list of the codes of the stations that I've been to
 var listClassNumbers = []; // A unique list of all the classes of train that I've traveled on
+
 var objListStations = [];
+var objStationDetails = {};
+var objRoutesTraveled = {};
 
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var percent = d3.format(".1%"); // Sets the format for percentages
@@ -37,7 +40,7 @@ function start()
 {
   d3.csv("./travel-data.csv", function(csv)
   {
-    d3.csv("./station-codes.csv", function (lookupCsv) 
+    d3.csv("./data/station-codes.csv", function (lookupCsv) 
     {
       genDataFromCSV(csv, lookupCsv);
       drawAll();
@@ -86,26 +89,26 @@ function genDataFromCSV(csv, lookupCsv)
   // Make station objects for each code
   for (var i in listVisitedStationCodes)
   {
-    stationSummary[listVisitedStationCodes[i]] = ({"code": listVisitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
+    objStationDetails[listVisitedStationCodes[i]] = ({"code": listVisitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
   }
 
   totalAccessRailStations = lookupCsv.filter(function (d) { return d.WheelchairAccess == "TRUE";}).length;
 
   for (var i in lookupCsv)
   {
-    if (stationSummary[lookupCsv[i].CrsCode])
+    if (objStationDetails[lookupCsv[i].CrsCode])
     {
-      stationSummary[lookupCsv[i].CrsCode]["name"] = lookupCsv[i].StationName;
+      objStationDetails[lookupCsv[i].CrsCode]["name"] = lookupCsv[i].StationName;
 
       // As some stations have multiple rows in the lookup csv, and not all have accurate accessibility information record a station as accessible if *any* row says the station is accessible
-      stationSummary[lookupCsv[i].CrsCode]["accessible"] = stationSummary[lookupCsv[i].CrsCode]["accessible"] || (lookupCsv[i].WheelchairAccess == "TRUE");
+      objStationDetails[lookupCsv[i].CrsCode]["accessible"] = objStationDetails[lookupCsv[i].CrsCode]["accessible"] || (lookupCsv[i].WheelchairAccess == "TRUE");
 
       if (lookupCsv[i].WheelchairAccess == "TRUE")
       {
         totalVisitedAccessStations++;
       }
 
-      stationSummary[lookupCsv[i].CrsCode].location = (new ospoint(lookupCsv[i].Northing, lookupCsv[i].Easting)).toETRS89();
+      objStationDetails[lookupCsv[i].CrsCode].location = (new ospoint(lookupCsv[i].Northing, lookupCsv[i].Easting)).toETRS89();
     }
   }
 
@@ -116,43 +119,45 @@ function genDataFromCSV(csv, lookupCsv)
     .key(function(d) {return d.Origin; })
     .rollup(function(v) {return v.length; })
     .entries(csv)
-    .forEach(function(m) { stationSummary[m.key].ori = m.values; });
+    .forEach(function(m) { objStationDetails[m.key].ori = m.values; });
   
   var destcnt = d3.nest()
     .key(function(d) {return d.Destination; })
     .rollup(function(v) {return v.length; })
     .entries(csv)
-    .forEach(function(m) { stationSummary[m.key].dst = m.values; });
+    .forEach(function(m) { objStationDetails[m.key].dst = m.values; });
 
   // Add origins to destinations for total journeys to/from station
 
-  for (var i in stationSummary)
+  for (var i in objStationDetails)
   {
-    stationSummary[i].tot = stationSummary[i].ori + stationSummary[i].dst;
-    stationSummary[i].totp = stationSummary[i].tot / totalJourneys;
-    stationSummary[i].orip = stationSummary[i].ori / totalJourneys;
-    stationSummary[i].dstp = stationSummary[i].dst / totalJourneys;
+    objStationDetails[i].tot = objStationDetails[i].ori + objStationDetails[i].dst;
+    objStationDetails[i].totp = objStationDetails[i].tot / totalJourneys;
+    objStationDetails[i].orip = objStationDetails[i].ori / totalJourneys;
+    objStationDetails[i].dstp = objStationDetails[i].dst / totalJourneys;
   }
 
   // Make a list of all the stations
 
-  for (var i in stationSummary)
+  for (var i in objStationDetails)
   {
-    objListStations.push(stationSummary[i]);
+    objListStations.push(objStationDetails[i]);
   }
 
   objListStations.sort(function (a, b) { return b.tot - a.tot; });
-  listVisitedStationCodes.sort(function (a, b) { return stationSummary[b].tot - stationSummary[a].tot; });
+  listVisitedStationCodes.sort(function (a, b) { return objStationDetails[b].tot - objStationDetails[a].tot; });
 
   // Generate an NxN grid of zeros
   var size = totalVisitedStations;
   for (var x = 0; x < totalVisitedStations; x++)
   {
-    gridJourneys[x] = [];
+    gridPctJourneys[x] = [];
+    gridCntJourneys[x] = [];
 
     for (var y = 0; y < totalVisitedStations; y++)
     {
-      gridJourneys[x][y] = 0;
+      gridPctJourneys[x][y] = 0;
+      gridCntJourneys[x][y] = 0;
     }
   }
 
@@ -161,7 +166,8 @@ function genDataFromCSV(csv, lookupCsv)
   {
     var x = listVisitedStationCodes.indexOf(csv[i].Origin);
     var y = listVisitedStationCodes.indexOf(csv[i].Destination);
-    gridJourneys[x][y] += (1 / totalJourneys) ;
+    gridPctJourneys[x][y] += (1 / totalJourneys);
+    gridCntJourneys[x][y] ++;
   }
 
   // Group the journeys by class
@@ -172,19 +178,46 @@ function genDataFromCSV(csv, lookupCsv)
     .map(function (d) { return { "class": d.key, "count": d.values }; });
 
   listClassNumbers = journeysByClass.map(function (d) { return d.class });
+
+  // Create list of all journeys
+  for (var i in csv)
+  {
+    listRoutesTraveled.push([csv[i].Origin, csv[i].Destination]);
+  }
+
+  // For each journey, sort the two ends alphabetically
+  for (var i in listRoutesTraveled)
+  {
+    listRoutesTraveled[i].sort(function (a, b) { return a > b; });
+  }
+
+  // Remove any duplicates
+  var uniquelist = listRoutesTraveled.filter(function(elem, pos) {
+    return listRoutesTraveled.findIndex(function (elem2) { 
+      return (elem[0] == elem2[0]) && (elem[1] == elem2[1]); }
+    ) == pos;
+  }); 
+  listRoutesTraveled = uniquelist;
+
 }
 
 function drawAll()
 {
   console.log("Starting");
+  
   drawStats();
-  drawBarChart();
+  
   drawHeatCal();
-  drawStackedBars("Class", journeysByClass, "count", "class", "", "#class-graph");
+
+  drawChordDia(objListStations, gridPctJourneys);
+  drawMap();
+
   drawStackedBars("Stations", objListStations, "tot", "code", "name", "#station-graph");
   drawStackedBars("Departures", objListStations, "ori", "code", "name", "#station-dep");
   drawStackedBars("Arrivals", objListStations, "dst", "code", "name", "#station-ari");
-  drawChordDia(objListStations, gridJourneys)
+  drawBarChart();
+
+  drawStackedBars("Class", journeysByClass, "count", "class", "", "#class-graph");
 }
 
 function drawStats()
@@ -535,7 +568,7 @@ function loadMap()
 {
   d3.csv("./travel-data.csv", function(csv)
   {
-    d3.csv("./station-codes.csv", function (lookupCsv) 
+    d3.csv("./data/station-codes.csv", function (lookupCsv) 
     {
       genDataFromCSV(csv, lookupCsv);
       drawMap();
@@ -581,6 +614,15 @@ function drawMap()
       .datum(topojson.mesh(uk, uk.objects.subunits, function(a, b) { return a !== b; }))
       .attr("d", path)
       .attr("class", "map-borders");
+
+    svg.selectAll(".route-path")
+      .data(listRoutesTraveled)
+      .enter().append("line")
+        .attr("class", "route-path")
+        .attr("x1", function(d) { return projection([objStationDetails[d[0]].location.longitude, objStationDetails[d[0]].location.latitude])[0]; })
+        .attr("y1", function(d) { return projection([objStationDetails[d[0]].location.longitude, objStationDetails[d[0]].location.latitude])[1]; })
+        .attr("x2", function(d) { return projection([objStationDetails[d[1]].location.longitude, objStationDetails[d[1]].location.latitude])[0]; })
+        .attr("y2", function(d) { return projection([objStationDetails[d[1]].location.longitude, objStationDetails[d[1]].location.latitude])[1]; });
 
     svg.selectAll(".station-dot")
       .data(objListStations)
