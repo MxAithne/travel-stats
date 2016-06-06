@@ -596,6 +596,7 @@ function drawMap()
     .attr("width", mapwidth)
     .attr("height", mapheight)
     .attr("shape-rendering", "geometricPrecision")
+    .on("click", clickzoom)
     .append("g");
 
   var colours = d3.scale.category20()
@@ -700,4 +701,7 @@ function clickzoom(d) {
       .duration(750)
       .attr("r", 5 / k + "px")
       .style("stroke-width", function (d) { return d === centered ? 5 / k + "px" : 2 / k + "px"; }); 
+
+  // Make sure that if we click on a station, we eat that event and we don't trigger the "click" on the whole map
+  d3.event.stopPropagation();
 }
