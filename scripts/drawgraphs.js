@@ -576,35 +576,37 @@ function loadMap()
   });
 }
 
-function drawMap()
-{
-  var width = 960,
-    height = 1160;
+  var mapwidth = 960,
+    mapheight = 1160,
+    mapsvg = null;
 
   var projection = d3.geo.albers()
     .center([0, 55.4])
     .rotate([4.4, 0])
     .parallels([50, 60])
     .scale(6000)
-    .translate([width / 2, height / 2]);
+    .translate([mapwidth / 2, mapheight / 2]);
   
   var path = d3.geo.path()
     .projection(projection);
-  
-  var svg = d3.select("#ukmap").append("svg")
-    .attr("width", width)
-    .attr("height", height)
-    .attr("shape-rendering", "geometricPrecision");
+
+function drawMap()
+{
+  mapsvg = d3.select("#ukmap").append("svg")
+    .attr("width", mapwidth)
+    .attr("height", mapheight)
+    .attr("shape-rendering", "geometricPrecision")
+    .append("g");
 
   var colours = d3.scale.category20()
     .domain(objListStations.map(function (d) { return d.code; } ));
 
-  d3.json("test.json", function(error, uk) 
+  d3.json("data/uk-counties.json", function(error, uk) 
   {
     if (error) return console.error(error);
 
     // county borders
-    svg.append("g")
+    mapsvg.append("g")
       .selectAll(".county-outline")
       .data(topojson.feature(uk, uk.objects.counties).features)
       .enter().append("path")
@@ -613,24 +615,25 @@ function drawMap()
         .attr("id", function (d) {
          return d.properties.postal; 
        })
+        .on("click", clickzoom)
         .append("title")
           .text(function (d) {
            return d.properties.county + " (" + d.properties.postal + ")"; 
          });
 
     // external boundaries (coastlines)
-    svg.append("path")
+    mapsvg.append("path")
       .datum(topojson.mesh(uk, uk.objects.subunits, function(a, b) { return a === b; }))
       .attr("d", path)
       .attr("class", "map-outline");
 
     // internal boundaries (borders)
-    svg.append("path")
+    mapsvg.append("path")
       .datum(topojson.mesh(uk, uk.objects.subunits, function(a, b) { return a !== b; }))
       .attr("d", path)
       .attr("class", "map-borders");
 
-    svg.selectAll(".route-path")
+    mapsvg.selectAll(".route-path")
       .data(listRoutesTraveled)
       .enter().append("line")
         .attr("class", "route-path")
@@ -646,7 +649,7 @@ function drawMap()
           gridCntJourneys[listVisitedStationCodes.indexOf(d[1])][listVisitedStationCodes.indexOf(d[0])]
         });
 
-    svg.selectAll(".station-dot")
+    mapsvg.selectAll(".station-dot")
       .data(objListStations)
       .enter().append("circle")
         .attr("r", 5)
@@ -657,4 +660,40 @@ function drawMap()
 
   });
 
+}
+
+var centered;
+
+function clickzoom(d) {
+  var x, y, k;
+  
+
+  if (d && centered !== d) {
+    var centroid = path.centroid(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = 8;
+    centered = d;
+  } else {
+    x = mapwidth / 2;
+    y = mapheight / 2;
+    k = 1;
+    centered = null;
+  }
+
+  mapsvg.selectAll(".county-outline")
+      .classed("active", centered && function(d) { return d === centered; });
+
+  mapsvg.transition()
+      .duration(750)
+      .attr("transform", "translate(" + mapwidth / 2 + "," + mapheight / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+      .style("stroke-width", 1.5 / k + "px");
+
+  mapsvg.selectAll(".route-path").transition()
+      .duration(750)
+      .style("stroke-width", 4 / k + "px");   
+
+  mapsvg.selectAll(".station-dot").transition()
+      .duration(750)
+      .attr("r", 5 / k + "px"); 
 }

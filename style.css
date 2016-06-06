@@ -98,6 +98,11 @@ path.chord {
   opacity: .25;
 }
 
+.active
+{
+  fill: blue;
+}
+
 .map-borders
 {
   stroke: lightblue;
