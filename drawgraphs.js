@@ -599,9 +599,24 @@ function drawMap()
   var colours = d3.scale.category20()
     .domain(objListStations.map(function (d) { return d.code; } ));
 
-  d3.json("uk.json", function(error, uk) 
+  d3.json("test.json", function(error, uk) 
   {
     if (error) return console.error(error);
+
+    // county borders
+    svg.append("g")
+      .selectAll(".county-outline")
+      .data(topojson.feature(uk, uk.objects.counties).features)
+      .enter().append("path")
+        .attr("d", path)
+        .attr("class", "county-outline")
+        .attr("id", function (d) {
+         return d.properties.postal; 
+       })
+        .append("title")
+          .text(function (d) {
+           return d.properties.county + " (" + d.properties.postal + ")"; 
+         });
 
     // external boundaries (coastlines)
     svg.append("path")
@@ -622,7 +637,14 @@ function drawMap()
         .attr("x1", function(d) { return projection([objStationDetails[d[0]].location.longitude, objStationDetails[d[0]].location.latitude])[0]; })
         .attr("y1", function(d) { return projection([objStationDetails[d[0]].location.longitude, objStationDetails[d[0]].location.latitude])[1]; })
         .attr("x2", function(d) { return projection([objStationDetails[d[1]].location.longitude, objStationDetails[d[1]].location.latitude])[0]; })
-        .attr("y2", function(d) { return projection([objStationDetails[d[1]].location.longitude, objStationDetails[d[1]].location.latitude])[1]; });
+        .attr("y2", function(d) { return projection([objStationDetails[d[1]].location.longitude, objStationDetails[d[1]].location.latitude])[1]; })
+        .append("title").text(function(d) { 
+          return objStationDetails[d[0]].name + " → " + objStationDetails[d[1]].name + " : " + 
+          gridCntJourneys[listVisitedStationCodes.indexOf(d[0])][listVisitedStationCodes.indexOf(d[1])]
+          + "\n" + 
+          objStationDetails[d[1]].name + " → " + objStationDetails[d[0]].name + " : " + 
+          gridCntJourneys[listVisitedStationCodes.indexOf(d[1])][listVisitedStationCodes.indexOf(d[0])]
+        });
 
     svg.selectAll(".station-dot")
       .data(objListStations)

@@ -88,14 +88,23 @@ path.chord {
 {
   stroke: blue;
   stroke-width: 2px;
+  fill: none;
+}
+
+.county-outline
+{
+  stroke: darkblue;
+  stroke-width: 1px;
+  opacity: .25;
 }
 
 .map-borders
 {
-  stroke: darkblue;
+  stroke: lightblue;
   stroke-width: 2px;
   stroke-dasharray: 2,2;
   stroke-linejoin: round;
+  fill: none;
 }
 
 .station-dot
@@ -107,7 +116,8 @@ path.chord {
 
 .route-path
 {
-  stroke: lightblue;
-  stroke-width: 1px;
-  stroke-dasharray: 2,2,1,2;
+  stroke: aqua;
+  stroke-width: 4px;
+  opacity: 0.25;
+  /* stroke-dasharray: 2,2,1,2; */
 }

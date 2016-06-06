@@ -38,3 +38,9 @@ for (var row in csv)
 
 
 visitedStations code:NOT name: Nottingham origin:2 dept:2 x:50 y:50
+
+# TopoJSON
+
+```
+topojson -o test.json --properties country=NAME --properties county=name --properties name=NAME --properties postal=postal -- subunits.json counties.json
+```
