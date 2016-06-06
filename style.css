@@ -98,11 +98,6 @@ path.chord {
   opacity: .25;
 }
 
-.active
-{
-  fill: blue;
-}
-
 .map-borders
 {
   stroke: lightblue;
@@ -114,9 +109,14 @@ path.chord {
 
 .station-dot
 {
-  /* fill: blue; */
   opacity: 0.75;
   stroke: whitesmoke;
+}
+
+.active
+{
+  stroke: red;
+  stroke-width: 2px;
 }
 
 .route-path

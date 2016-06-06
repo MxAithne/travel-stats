@@ -615,7 +615,6 @@ function drawMap()
         .attr("id", function (d) {
          return d.properties.postal; 
        })
-        .on("click", clickzoom)
         .append("title")
           .text(function (d) {
            return d.properties.county + " (" + d.properties.postal + ")"; 
@@ -656,6 +655,7 @@ function drawMap()
         .attr("transform",  function(d) { return "translate(" + projection([d.location.longitude, d.location.latitude]) + ")"; })
         .attr("class", "station-dot")
         .attr("style", function (d) { return "fill:" + colours(d.code); } )
+        .on("click", clickzoom)
         .append("title").text(function(d) { return d.name; });;
 
   });
@@ -669,9 +669,12 @@ function clickzoom(d) {
   
 
   if (d && centered !== d) {
-    var centroid = path.centroid(d);
+    /*var centroid = path.centroid(d);
     x = centroid[0];
-    y = centroid[1];
+    y = centroid[1];*/
+    var location = projection([d.location.longitude, d.location.latitude]);
+    x = location[0];
+    y = location[1];
     k = 8;
     centered = d;
   } else {
@@ -681,7 +684,7 @@ function clickzoom(d) {
     centered = null;
   }
 
-  mapsvg.selectAll(".county-outline")
+  mapsvg.selectAll(".station-dot")
       .classed("active", centered && function(d) { return d === centered; });
 
   mapsvg.transition()
@@ -695,5 +698,6 @@ function clickzoom(d) {
 
   mapsvg.selectAll(".station-dot").transition()
       .duration(750)
-      .attr("r", 5 / k + "px"); 
+      .attr("r", 5 / k + "px")
+      .style("stroke-width", function (d) { return d === centered ? 5 / k + "px" : 2 / k + "px"; }); 
 }
