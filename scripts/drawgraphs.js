@@ -237,9 +237,9 @@ function drawStats()
 function drawStackedBars(title,dataset,quantity,label,description,location)
 {
   
-  var maxWidth = 960;
+  var maxWidth = 600;
   var barHeight = 50;
-  var xoffset = 100;
+  var xoffset = 50;
 
   // Work out the start position and end position for each class
   var currentPosition = 0;
@@ -306,9 +306,9 @@ function drawBarChart()
 {
   console.log("Drawing bar chart");
 
-  var barWidth = 800;
+  var barWidth = 600;
 	var barHeight = 25;
-	var xoffset = 100;
+	var xoffset = 50;
 
 	var x = d3.scale.linear()
 		.range([0, barWidth - (xoffset + 10) ]);
@@ -380,14 +380,14 @@ function drawBarChart()
 
 // Calendar Heat Graph
 
-var cellSize = 17; // cell size
+var cellSize = 12; // cell size
 
 var day = function(d) { return (d.getDay() + 6) % 7; }, // monday = 0
     week = d3.time.format("%W"), // monday-based week number
     date = d3.time.format("%Y-%m-%d");
 
 var margin = {top: 20, right: 0, bottom: 5.5, left: 19.5},
-    hgHeight = 130 - margin.top - margin.bottom,
+    hgHeight = 100 - margin.top - margin.bottom,
     size = hgHeight / 7,
     hgWidth = (53 * size) + margin.left + margin.right;
 
@@ -469,8 +469,8 @@ function monthPath(t0) {
 
 function drawChordDia(labelData, matrixData) {
 
-  var width = 720,
-      height = 720,
+  var width = 600,
+      height = 600,
       outerRadius = Math.min(width, height) / 2 - 10,
       innerRadius = outerRadius - 24;
 
@@ -576,15 +576,15 @@ function loadMap()
   });
 }
 
-  var mapwidth = 960,
-    mapheight = 1160,
+  var mapwidth = 600,
+    mapheight = 800,
     mapsvg = null;
 
   var projection = d3.geo.albers()
     .center([0, 55.4])
     .rotate([4.4, 0])
     .parallels([50, 60])
-    .scale(6000)
+    .scale(4000)
     .translate([mapwidth / 2, mapheight / 2]);
   
   var path = d3.geo.path()
