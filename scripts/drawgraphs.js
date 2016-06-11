@@ -705,3 +705,5 @@ function clickzoom(d) {
   // Make sure that if we click on a station, we eat that event and we don't trigger the "click" on the whole map
   d3.event.stopPropagation();
 }
+
+start(); // Everything has now been loaded, go back and start drawing stuff
