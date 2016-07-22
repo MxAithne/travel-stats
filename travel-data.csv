@@ -61,4 +61,5 @@ Date,Origin,Destination,Class,TOC,Trip
 2016-07-01,NQY,PAR,150,GW,CornwallJune2016
 2016-07-01,PAR,PAD,43,GW,CornwallJune2016
 2016-07-01,STP,NOT,222,EM,CornwallJune2016
-2016-07-01,NOT,STP,222,EM,TransPrideBrghton
+2016-07-21,NOT,STP,222,EM,TransPrideBrghton
+2016-07-21,SPL,NOT,387,TL
