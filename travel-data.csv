@@ -64,3 +64,5 @@ Date,Origin,Destination,Class,TOC,Trip
 2016-07-22,NOT,STP,222,EM,TransPrideBrighton
 2016-07-22,SPL,NOT,387,TL
 2016-07-23,ECR,BTN,387,TL,TransPrideBrighton
+2016-07-23,BTN,SPL,377,TL,TransPrideBrighton
+2016-07-23,STP,NOT,43,EM,TransPrideBrighton
