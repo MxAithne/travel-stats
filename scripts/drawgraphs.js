@@ -237,7 +237,7 @@ function drawStats()
 function drawStackedBars(title,dataset,quantity,label,description,location)
 {
   
-  var maxWidth = 600;
+  var maxWidth = 800;
   var barHeight = 50;
   var xoffset = 50;
 
@@ -306,7 +306,7 @@ function drawBarChart()
 {
   console.log("Drawing bar chart");
 
-  var barWidth = 600;
+  var barWidth = 800;
 	var barHeight = 25;
 	var xoffset = 50;
 
@@ -469,8 +469,8 @@ function monthPath(t0) {
 
 function drawChordDia(labelData, matrixData) {
 
-  var width = 600,
-      height = 600,
+  var width = 800,
+      height = 800,
       outerRadius = Math.min(width, height) / 2 - 10,
       innerRadius = outerRadius - 24;
 
