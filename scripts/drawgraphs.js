@@ -53,20 +53,24 @@ function genDataFromCSV(csv, lookupCsv)
 {
   totalJourneys = csv.length; // Count the total number of journeys that have been made
 
+  // Count the total number of unique CRS Codes in the table of National Rail stations 
   var nestedByCrsCode = d3.nest()
     .key(function(d) { return d.CrsCode; })
     .rollup(function(d) { return d.length; })
     .map(lookupCsv);
   totalNatRailStations = Object.keys(nestedByCrsCode).length;
 
+  // Go through the travel data and make a list of each of the different CRS Codes that have been visited as either a Origin or Destinaton 
   for (var i in csv)
   {
     if (listVisitedStationCodes.indexOf(csv[i].Origin) == -1) { listVisitedStationCodes.push(csv[i].Origin); }
     if (listVisitedStationCodes.indexOf(csv[i].Destination) == -1) { listVisitedStationCodes.push(csv[i].Destination); }
   }
 
+  // Count the lenght of the list of visited CRS Codes to work out how many different stations that I've been to
   totalVisitedStations = listVisitedStationCodes.length;
 
+  // Work of the percentage of the stations that have been visited
   percentVisitedStations = percent(totalVisitedStations / totalNatRailStations);
 
   journeysPerDay = d3.nest()
@@ -92,6 +96,7 @@ function genDataFromCSV(csv, lookupCsv)
     objStationDetails[listVisitedStationCodes[i]] = ({"code": listVisitedStationCodes[i], "ori": 0, "dst": 0, "tot": 0});
   }
 
+  // Go though the national rail stations CSV and count the number of stations that are listed as fully wheelchair accessible
   totalAccessRailStations = lookupCsv.filter(function (d) { return d.WheelchairAccess == "TRUE";}).length;
 
   for (var i in lookupCsv)
@@ -113,6 +118,7 @@ function genDataFromCSV(csv, lookupCsv)
   }
 
   percentAccessRailStations = percent(totalAccessRailStations / totalNatRailStations);
+
   percentVisitedAccessStations = percent(totalVisitedAccessStations / totalAccessRailStations);
 
   var origincnt = d3.nest()
@@ -380,7 +386,7 @@ function drawBarChart()
 
 // Calendar Heat Graph
 
-var cellSize = 12; // cell size
+var cellSize = 14; // cell size
 
 var day = function(d) { return (d.getDay() + 6) % 7; }, // monday = 0
     week = d3.time.format("%W"), // monday-based week number
