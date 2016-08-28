@@ -8,6 +8,8 @@ var totalAccessRailStations = 0; // The total number of national rail stations t
 var totalVisitedStations = 0; // A count of the total number of unique stations that I've been to
 var totalVisitedAccessStations = 0; // The total number of unique stations that I've been to that are fully wheelchair accessible
 
+var totalDistanceTraveled = 0;
+
 var totalClasses = 0; // A count of the total number of unique classes of train that I've traveled on
 
 var percentDaysTraveled = 0;
@@ -17,6 +19,9 @@ var percentVisitedAccessStations = 0;
 
 var maxJourneysInDay = 0; // The most rail journey that I have done in one day
 var maxJourneysDate = 0; // The date of the most recient day that I did the most rail journeys in
+var maxDistanceTraveled = 0; // The longest rail journey that I've done
+
+var minDistanceTraveled = 0; // The shortest rail journey that I've done
 
 var journeysPerDay = [];
 var journeysByClass = []; 
@@ -26,12 +31,13 @@ var gridCntJourneys = [];
 
 // These must be of type list [] for the system to work
 var listRoutesTraveled = [];
+var listRoutesTraveledUnique = [];
 var listVisitedStationCodes = []; // A unique list of the codes of the stations that I've been to
 var listClassNumbers = []; // A unique list of all the classes of train that I've traveled on
 
-var objListStations = [];
+var objListStations = []; // A list of stations as objects with keys to query
+var objListJourneys = []; // A list of journeys as objects with keys to query
 var objStationDetails = {};
-var objRoutesTraveled = {};
 
 var months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
 var percent = d3.format(".1%"); // Sets the format for percentages
@@ -203,8 +209,55 @@ function genDataFromCSV(csv, lookupCsv)
 			return (elem[0] == elem2[0]) && (elem[1] == elem2[1]); }
 		) == pos;
 	}); 
-	listRoutesTraveled = uniquelist;
+	listRoutesTraveledUnique = uniquelist
 
+	for (var i in csv)
+	{
+		
+		objListJourneys[i] = {}; // Creates a blank data structure in the list
+	
+		// Populate the data structure with data from the csv file
+		objListJourneys[i].date = csv[i].Date;
+		objListJourneys[i].trip = csv[i].Trip;
+		objListJourneys[i].toc = csv[i].TOC;
+		objListJourneys[i].ori = csv[i].Origin;
+		objListJourneys[i].dst = csv[i].Destination;
+
+		// Get lat/long for each origin / destination
+		var oriLat = objStationDetails[csv[i].Origin].location.latitude;
+		var oriLong = objStationDetails[csv[i].Origin].location.longitude;
+		var dstLat = objStationDetails[csv[i].Destination].location.latitude;
+		var dstLong = objStationDetails[csv[i].Destination].location.longitude;
+
+		// Calcuate the distance and store it in distance
+		objListJourneys[i].distance = getDistance(oriLat,oriLong,dstLat,dstLong);
+
+	}
+
+	// Add up all the distances in the list of journeys, also get max and min
+	// Flatten object list first into a list of numbers, then reduce down to a single number.
+	totalDistanceTraveled = objListJourneys.map(function (a) { return a.distance; }).reduce(function (a, b) { return a + b; }, 0);
+	maxDistanceTraveled = objListJourneys.map(function (a) { return a.distance; }).reduce(function(a, b) { return Math.max(a, b); }, 0);
+	minDistanceTraveled = objListJourneys.map(function (a) { return a.distance; }).reduce(function(a, b) { return Math.min(a, b); }, maxDistanceTraveled);
+
+}
+
+function getDistance(lat1,lon1,lat2,lon2) {
+  var R = 6371; // Radius of the earth in km
+  var dLat = deg2rad(lat2-lat1);  // deg2rad below
+  var dLon = deg2rad(lon2-lon1); 
+  var a = 
+    Math.sin(dLat/2) * Math.sin(dLat/2) +
+    Math.cos(deg2rad(lat1)) * Math.cos(deg2rad(lat2)) * 
+    Math.sin(dLon/2) * Math.sin(dLon/2)
+    ; 
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+  var d = R * c; // Distance in km
+  return d;
+}
+
+function deg2rad(deg) {
+  return deg * (Math.PI/180)
 }
 
 function drawAll()
@@ -228,7 +281,10 @@ function drawAll()
 
 function drawStats()
 {
-	$('#gen-stats').append("<p>Total journeys: " + totalJourneys + "</p>");
+	$('#gen-stats').append("<p>Total rail journeys made: " + totalJourneys + "</p>");
+	$('#gen-stats').append("<p>Total distance traveled (as the crow flies) by rail: " + totalDistanceTraveled.toFixed(1) + " km</p>");
+	$('#gen-stats').append("<p>Longest single rail journey (as the crow flies): " + maxDistanceTraveled.toFixed(1) + " km</p>");
+	$('#gen-stats').append("<p>Shortest single rail journey (as the crow flies): " + minDistanceTraveled.toFixed(1) + " km</p>");
 	$('#gen-stats').append("<p>Total stations visited: " + totalVisitedStations + " / " + totalNatRailStations + " (" + percentVisitedStations + ")</p>");
 	$('#gen-stats').append("<p>Total fully wheelchair accessible stations visited: " + totalVisitedAccessStations + " / " + totalAccessRailStations + " (" + percentVisitedAccessStations + ")</p>");
 	$('#gen-stats').append("<p>Total days spent traveling: " + totalDaysTraveled + " / 365 (" + percentDaysTraveled + ")</p>");
@@ -640,7 +696,7 @@ function drawMap()
 			.attr("class", "map-borders");
 
 		mapsvg.selectAll(".route-path")
-			.data(listRoutesTraveled)
+			.data(listRoutesTraveledUnique)
 			.enter().append("line")
 				.attr("class", "route-path")
 				.attr("x1", function(d) { return projection([objStationDetails[d[0]].location.longitude, objStationDetails[d[0]].location.latitude])[0]; })
