@@ -595,7 +595,9 @@ function drawChordDia(labelData, matrixData) {
 			.text(function(d, i) { return labelData[i].code; });
 
 	// Remove the labels that don't fit. :(
-	groupText.filter(function(d, i) { return groupPath[0][i].getTotalLength() / 2 - 16 < this.getComputedTextLength(); })
+	groupText.filter(function(d, i) { 
+		return groupPath[0][i].getTotalLength() / 2 - 30 < this.getComputedTextLength();
+	})
 			.remove();
 	
 	// Add the chords.
