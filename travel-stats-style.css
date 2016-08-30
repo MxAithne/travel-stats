@@ -1,16 +1,19 @@
-body /* Everything on the page */
+
+.travel-stats-box
 {
+  width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+
   color: whitesmoke;
   font: 16px sans-serif;
   shape-rendering: crispEdges;
   background-color: black;
-}
 
-main
-{
-  width: 600px;
-  margin-left: auto;
-  margin-right: auto;
+  border: whitesmoke;
+  border-style: dashed;
+  border-radius: 8px;
+  padding: 8px;
 }
 
 svg
