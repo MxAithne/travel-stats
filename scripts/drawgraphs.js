@@ -1,5 +1,7 @@
 // Global datastores
 
+var rawTravelData = "https://gist.githubusercontent.com/MxAithne/269897261065a695fad1ccb1efc36d31/raw"; // The location of the csv data for journeys
+
 var totalJourneys = 0; // A count of all the journeys that I've made
 var totalDaysTraveled = 0; // A count of days that have a journey on them
 
@@ -44,7 +46,7 @@ var percent = d3.format(".1%"); // Sets the format for percentages
 
 function start()
 {
-	d3.csv("./travel-data.csv", function(csv)
+	d3.csv(rawTravelData, function(csv)
 	{
 		d3.csv("./data/station-codes.csv", function (lookupCsv) 
 		{
