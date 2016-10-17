@@ -2,8 +2,8 @@
 .travel-stats-box
 {
   width: 960px;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 50%;
+  transform: translateX(-50%);
 
   color: whitesmoke;
   font: 16px sans-serif;
