@@ -740,7 +740,7 @@ function clickzoom(d) {
 		var location = projection([d.location.longitude, d.location.latitude]);
 		x = location[0];
 		y = location[1];
-		k = 8;
+		k = 16;
 		centered = d;
 	} else {
 		x = mapwidth / 2;
